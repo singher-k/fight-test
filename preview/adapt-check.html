@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>战斗界面 · 适配验算</title>
+<style>
+  :root{
+    --bg:#070b14; --panel:#111a2b; --line:#243149; --text:#e8eefc; --dim:#93a4c0;
+    --accent:#7fc4ff; --warn:#ffcf6b; --bad:#ff6b6b;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background:radial-gradient(1200px 700px at 50% -10%,#16233c 0%,var(--bg) 62%);
+    color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    display:flex;flex-direction:column;min-height:100%;
+  }
+  header{padding:18px 26px 8px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+  h1{font-size:17px;margin:0;font-weight:600;letter-spacing:.4px}
+  h1 span{color:var(--dim);font-weight:400;font-size:13px;margin-left:10px}
+  .btns{display:flex;gap:8px;flex-wrap:wrap}
+  button{
+    background:var(--panel);color:var(--dim);border:1px solid var(--line);border-radius:9px;
+    padding:8px 13px;font-size:12.5px;cursor:pointer;transition:.15s;font-family:inherit;
+  }
+  button:hover{color:var(--text);border-color:#33507a}
+  button.on{background:#1d3355;color:#cfe6ff;border-color:#3d6fa8}
+  .toggles{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .slider{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--dim);
+          background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:6px 11px}
+  .slider b{color:var(--accent);font-variant-numeric:tabular-nums;min-width:40px;text-align:right}
+  .slider input{width:104px;accent-color:#7fc4ff;cursor:pointer}
+  main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:6px 26px 26px;gap:26px;flex-wrap:wrap}
+  .stagewrap{display:flex;flex-direction:column;gap:9px;align-items:center;flex:none}
+  #stage{position:relative;border-radius:22px;overflow:hidden;background:#0b1020;
+         box-shadow:0 24px 70px rgba(0,0,0,.6),0 0 0 1px #22304a inset;flex:none}
+  #stage::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:22px;
+    box-shadow:0 0 0 2px #2b3b57 inset}
+  #world{position:relative;border-radius:8px;background:#0d1526;border:1px solid var(--line);overflow:hidden}
+  .el{position:absolute;transform:translate(-50%,-50%)}
+  .lbl{position:absolute;font-size:11px;line-height:1.25;white-space:nowrap}
+  .note{width:302px;font-size:12.5px;line-height:1.8;color:var(--dim)}
+  .note b{color:var(--text);font-weight:600}
+  .note .k{color:var(--accent)}
+  .note .w{color:var(--warn)}
+  .note .bad{color:var(--bad)}
+  .note .ok{color:#5fd08a}
+  .note .dim{color:var(--dim)}
+  .note hr{border:0;border-top:1px solid var(--line);margin:11px 0}
+  .legend{display:flex;align-items:center;gap:7px;margin-top:4px}
+  .dot{width:9px;height:9px;border-radius:3px;flex:none}
+  #info{font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<header>
+  <h1>战斗界面适配验算<span>同一套算式，覆盖 6 种屏幕比例</span></h1>
+  <div class="btns" id="devs"></div>
+  <div class="toggles">
+    <div class="slider">
+      <span>角色大小</span>
+      <input id="gscale" type="range" min="0.3" max="1.3" step="0.05" value="0.5">
+      <b id="gscaleVal">0.50×</b>
+    </div>
+    <div class="slider">
+      <span>地面上移</span>
+      <input id="goff" type="range" min="0" max="280" step="10" value="60">
+      <b id="goffVal">60</b>
+    </div>
+    <div class="slider">
+      <span>中心距</span>
+      <input id="cdist" type="range" min="80" max="1500" step="10" value="460">
+      <b id="cdistVal">460</b>
+    </div>
+    <button id="tgGuide" class="on">辅助线</button>
+    <button id="tgSafe">安全区</button>
+  </div>
+</header>
+<main>
+  <div class="stagewrap">
+    <div id="stage"></div>
+    <div id="world"><div class="cap" id="wcap"></div></div>
+  </div>
+  <div class="note">
+    <div id="info"></div>
+    <hr>
+    <b>怎么读这张图</b><br>
+    这是按 <span class="k">BattleUI._layout()</span>、<span class="k">BattleManager._applyStageMetrics()</span>
+    与 <span class="k">Fighter._layoutHeadBar()</span> 的算式逐行复刻的验算图，不是游戏截图。<br>
+    <div class="legend"><span class="dot" style="background:#7fc4ff"></span>左方角色 / 其射程圈</div>
+    <div class="legend"><span class="dot" style="background:#ff9f6e"></span>右方角色 / 其射程圈</div>
+    <div class="legend"><span class="dot" style="background:#4a7fd0"></span>能量条</div>
+    <div class="legend"><span class="dot" style="background:#c792ea"></span>技能栏（4 键）</div>
+    <hr>
+    <b>本轮变更</b><br>
+    · 血条改到<span class="k">角色头顶跟随</span>（名字 + 数值 + 平滑收缩）<br>
+    · 脚底线加 <span class="k">BATTLE.groundOffsetY</span> 整体上移<br>
+    · 敌方站位不再是固定间距，改为<span class="k">各自走到自己射程内</span>再开打<br>
+    · 场地为 <span class="k">worldWidthScreens</span> 倍屏宽，镜头死区跟随主角<br>
+    · 顶部三个按钮：设置 / 循环 / 速度，标题按中间剩余区间算宽
+    <hr>
+    <b>适配规则</b><br>
+    · fitHeight：高度恒为 <span class="k">1280</span>，宽度随设备变化<br>
+    · 角色缩放 <span class="k">clamp(halfW/360, 0.62, 1) × BATTLE.characterScale</span><br>
+    · 头顶血条 <span class="k">168×15 × clamp(缩放, 0.75, 1.15)</span>，独立限幅避免看不清<br>
+    · 射程按<span class="k">两人中心距</span>判定，单位与世界一致（已乘场景缩放）<br>
+    · 底部技能栏总宽不超过可用宽，按钮等分<br>
+    · 以上滑块分别对应 <span class="k">BATTLE.characterScale / groundOffsetY</span>，<br>
+    　中心距滑块用于验证「射程远者先开打」的判定
+  </div>
+</main>
+<script>
+const K = 1280;                              // 设计高度（fitHeight）
+const MARGIN_X=20, TOP_PAD=20, BOTTOM_PAD=10;
+const BTN_W=84, BTN_H=44, SKILL_H=84, LOG_H=148, ENERGY_H=16;
+const ENERGY_W_MAX=440, LOG_W_MAX=420;
+const GROUND_RATIO=0.3672, BODY_TARGET=420;
+const HEAD_BAR_W=168, HEAD_BAR_H=15, HEAD_BAR_OFFSET_Y=30;
+const WORLD_SCREENS=2.4;
+
+const clamp=(v,a,b)=>v<a?a:(v>b?b:v);
+
+// 角色实测顶点包围盒（.skel + .atlas 解析所得）+ 各自的射程/移动
+const CHARS={
+  E200004:{name:'玄女', s:0.87, ax:-10, ay:-17,  minX:-232.8, maxX:203.7, minY:-64.2, maxY:517.7, headY:445, range:740, spd:300, c:'#7fc4ff'},
+  H30027 :{name:'剑客', s:0.76, ax:0,   ay:-111, minX:-246.8, maxX:207.6, minY:-146.6,maxY:444.3, headY:444, range:380, spd:380, c:'#ffd166'},
+  H30039 :{name:'祭司', s:0.80, ax:-14, ay:-86,  minX:-254.5, maxX:165.7, minY:-161.9,maxY:419.3, headY:419, range:520, spd:320, c:'#7ee787'},
+  H30047 :{name:'武姬', s:0.78, ax:-15, ay:-95,  minX:-203.1, maxX:213.2, minY:-133.2,maxY:502.7, headY:444, range:430, spd:370, c:'#ff9f6e'},
+  H30032 :{name:'术士', s:0.86, ax:0,   ay:-94,  minX:-169.9, maxX:129.7, minY:-133.2,maxY:393.5, headY:394, range:660, spd:300, c:'#c792ea'},
+};
+
+const DEVICES=[
+  {key:'iPhone SE',   sw:375,  sh:667},
+  {key:'iPhone X',    sw:375,  sh:812},
+  {key:'16:9 基准',   sw:720,  sh:1280},
+  {key:'Android 20:9',sw:412,  sh:915},
+  {key:'iPad 4:3',    sw:768,  sh:1024},
+  {key:'桌面浏览器',  sw:1440, sh:900},
+];
+
+let cur=2, guide=true, safe=false, globalScale=0.5, groundOff=60, centerDist=460;
+
+const stage=document.getElementById('stage');
+const world=document.getElementById('world');
+
+function render(){
+  const dev=DEVICES[cur];
+  const W=+(K*dev.sw/dev.sh);               // 可视宽度（设计单位）
+  const H=K;
+  const halfW=W/2, halfH=H/2;
+  const s={top:0,bottom:0,left:0,right:0};  // 验算默认无异形屏
+  const leftEdge=-halfW+s.left+MARGIN_X, rightEdge=halfW-s.right-MARGIN_X;
+  const usableW=rightEdge-leftEdge, usableH=H-s.top-s.bottom;
+
+  // 显示缩放：设计单位 → 页面像素
+  const maxH=Math.min(window.innerHeight-300,560);
+  const k=maxH/H;
+  stage.style.width=(W*k)+'px';
+  stage.style.height=(H*k)+'px';
+  stage.innerHTML='';
+
+  const P=(v)=>v*k;                          // 设计 → 像素
+  const Y=(y)=>P(halfH-y);                   // 设计Y → 页面Y（上原点）
+
+  // ---------- 世界 / 镜头（与 _applyStageMetrics + _updateCamera 一致）----------
+  const worldHalf=Math.max(halfW, halfW*WORLD_SCREENS);
+  const camLimit=Math.max(0, worldHalf-halfW);
+
+  // 角色世界坐标：主角固定居中（死区跟随），敌人按中心距摆在右侧
+  const leftX = -centerDist/2;
+  const camX  = clamp(leftX, -camLimit, camLimit);
+  const rightX= leftX + centerDist;
+
+  const X=(x)=>P(x-camX+halfW);              // 世界X → 页面X（含镜头偏移）
+
+  const box=(wx,wy,w,h,style)=>{              // 以世界坐标中心点定位
+    const d=document.createElement('div');
+    d.className='el';
+    Object.assign(d.style,Object.assign({
+      left:X(wx)+'px', top:Y(wy)+'px', width:P(w)+'px', height:P(h)+'px',
+    },style));
+    stage.appendChild(d);
+    return d;
+  };
+  const textAt=(wx,wy,str,style)=>{
+    const d=document.createElement('div');
+    d.className='lbl';
+    d.textContent=str;
+    Object.assign(d.style,Object.assign({
+      left:X(wx)+'px', top:Y(wy)+'px', transform:'translate(-50%,-50%)',
+      color:'#e8eefc', fontSize:Math.max(9,P(24))+'px',
+    },style));
+    stage.appendChild(d);
+    return d;
+  };
+
+  // ---------- 顶部 HUD（与 BattleUI._layout 一致）----------
+  const topY=halfH-s.top-TOP_PAD-BTN_H/2;
+  const btnGap=8;
+  const topBtn=(x,label,on)=>{
+    const d=box(x,topY,BTN_W,BTN_H,{
+      background:on?'#1d3355':'#233149',
+      border:'1px solid '+(on?'#3d6fa8':'#3a4a66'),
+      borderRadius:P(10)+'px',
+    });
+    d.innerHTML='<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;'
+      +'color:'+(on?'#cfe6ff':'#e8eefc')+';font-size:'+P(21)+'px;font-weight:600">'+label+'</div>';
+  };
+  topBtn(leftEdge+BTN_W/2,'设置');
+  topBtn(leftEdge+BTN_W*1.5+btnGap,'循环',true);
+  topBtn(rightEdge-BTN_W/2,'x1');
+
+  const tLeft=leftEdge+BTN_W*2+btnGap+12;
+  const tRight=rightEdge-BTN_W-12;
+  const titleAvail=Math.max(100,tRight-tLeft);
+  const titleCx=(tLeft+tRight)/2;
+  const titleFont=titleAvail>=380?26:titleAvail>=240?20:18;
+  const titleStr=titleAvail>=240?'模拟战斗 · SPINE 演示':'模拟战斗';
+  textAt(titleCx,topY,titleStr,{color:'#93a4c0',fontSize:P(titleFont)+'px'});
+
+  // 连胜 / 循环提示（标题下方）
+  textAt(titleCx,topY-BTN_H/2-16,'循环战斗中',{color:'#ffd166',fontSize:P(22)+'px',fontWeight:600});
+
+  // ---------- 底部（能量 / 技能栏 / 日志）----------
+  const skillY=-halfH+s.bottom+BOTTOM_PAD+SKILL_H/2;
+  const energyY=skillY+SKILL_H/2+30;
+  const energyW=clamp(usableW-40,160,ENERGY_W_MAX);
+  const labelY=energyY+22;
+  const logBottom=labelY+26;
+  const logW=clamp(usableW*0.72,200,LOG_W_MAX);
+  const logH=Math.min(LOG_H,Math.max(96,usableH*0.12));
+
+  const n=4, sgap=10, maxSW=156;
+  const avail=clamp(W-40,240,660);
+  const sW=Math.floor(Math.min(maxSW,(avail-(n-1)*sgap)/n));
+  const total=n*sW+(n-1)*sgap;
+  const startX=-total/2+sW/2;
+  const skills=[['云袖拂',30,'#ffd166'],['疏影横斜',45,'#ff9f6e'],['轻睨回春',50,'#5fd08a'],['天倾',100,'#c792ea']];
+  skills.forEach((sk,i)=>{
+    const x=startX+i*(sW+sgap);
+    const b=box(x,skillY,sW,SKILL_H,{background:'#233149',border:'2px solid '+sk[2],
+      borderRadius:P(12)+'px'});
+    b.innerHTML='<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px">'
+      +'<div style="color:#e8eefc;font-weight:600;font-size:'+P(sW<140?19:23)+'px">'+sk[0]+'</div>'
+      +'<div style="color:#93a4c0;font-size:'+P(15)+'px">能量 '+sk[1]+'</div></div>';
+  });
+
+  const eb=box(0,energyY,energyW,ENERGY_H,{background:'#0b1020',border:'1px solid #3a4a66',
+    borderRadius:P(ENERGY_H)+'px',overflow:'hidden'});
+  const ef=document.createElement('div');
+  Object.assign(ef.style,{position:'absolute',left:P(3)+'px',top:P(3)+'px',
+    width:P((energyW-6)*0.62)+'px',height:P(ENERGY_H-6)+'px',background:'#4a7fd0',
+    borderRadius:P(ENERGY_H)+'px'});
+  eb.appendChild(ef);
+  textAt(0,labelY,'能量 62 / 100',{color:'#93a4c0',fontSize:P(18)+'px'});
+
+  const lb=box(leftEdge+logW/2,logBottom+logH/2,logW,logH,{overflow:'hidden'});
+  lb.innerHTML='<div style="color:#93a4c0;font-size:'+P(17)+'px;line-height:'+P(25)+'px;white-space:pre-wrap;word-break:break-all">'
+    +'[ 战斗开始 ]  玄女  VS  武姬\n'
+    +'  玄女 移动至射程内，先行开打\n'
+    +'  武姬 需继续靠近（射程更短）\n'
+    +'[ 技能 ]  玄女 · 天倾</div>';
+
+  // ---------- 角色 + 射程圈 + 头顶血条 ----------
+  const gsAdapt=clamp(halfW/360,0.62,1);
+  const gs=gsAdapt*globalScale;
+  const groundY=-halfH+s.bottom+usableH*GROUND_RATIO+groundOff;
+  const uiScale=clamp(gs,0.75,1.15);
+
+  const drawChar=(id,wx,ratio,mirror)=>{
+    const c=CHARS[id], sc=c.s*gs;
+    const w=(c.maxX-c.minX)*sc;
+    const h=(c.maxY-c.minY)*sc;
+    const bottomY=groundY+(c.minY-c.ay)*sc;
+    const cyY=bottomY+h/2;
+
+    // 射程圈（世界单位：attackRange × 场景缩放，与 Fighter.attackRange 一致）
+    const rangePx=c.range*gs;
+    const ell=box(wx,groundY,rangePx*2,rangePx*2*0.2,{
+      border:'1px dashed '+c.c+'66',borderRadius:'50%',
+      background:c.c+'0d',
+    });
+    ell.style.pointerEvents='none';
+
+    // 身体包围盒
+    const bd=box(wx,cyY,w,h,{
+      background:'linear-gradient(180deg,'+c.c+'33,'+c.c+'14)',
+      border:'1px dashed '+c.c+'88',borderRadius:P(18)+'px',
+    });
+    // 朝向标识
+    const face=document.createElement('div');
+    Object.assign(face.style,{position:'absolute',top:'50%',[mirror?'left':'right']:'6px',
+      transform:'translateY(-50%)',color:c.c,fontSize:P(18)+'px',fontWeight:700});
+    face.textContent=mirror?'◀':'▶';
+    bd.appendChild(face);
+
+    // 头顶血条（barY = (headY-ay)*scale + headBarOffsetY*uiScale）
+    const barY=groundY+(c.headY-c.ay)*sc+HEAD_BAR_OFFSET_Y*uiScale;
+    const bw=HEAD_BAR_W*uiScale, bh=HEAD_BAR_H*uiScale;
+    const bar=box(wx,barY,bw,bh,{background:'#0a101c',border:'1.5px solid #7896be99',
+      borderRadius:P(bh)+'px',overflow:'hidden'});
+    const fill=document.createElement('div');
+    const inset=Math.max(1,P(bh*0.16));
+    Object.assign(fill.style,{position:'absolute',left:inset+'px',top:inset+'px',
+      width:(P(bw-bh*0.32)*ratio)+'px',height:(P(bh)-inset*2)+'px',
+      background:ratio<=0.25?'#ff6060':c.c,borderRadius:P(bh)+'px'});
+    bar.appendChild(fill);
+    const val=document.createElement('div');
+    Object.assign(val.style,{position:'absolute',inset:0,display:'flex',alignItems:'center',
+      justifyContent:'center',color:'#f0f6ff',fontSize:P(13*uiScale)+'px',fontWeight:700});
+    val.textContent=Math.round(864*ratio);
+    bar.appendChild(val);
+
+    // 名字（血条上方 13*uiScale）
+    textAt(wx,barY+bh/2+13*uiScale,c.name,
+      {color:c.c,fontSize:P(17*uiScale)+'px',fontWeight:700});
+  };
+  drawChar('E200004',leftX,0.78,false);
+  drawChar('H30047',rightX,0.46,true);
+
+  // ---------- 辅助线 ----------
+  if(guide){
+    const hline=(y,color,dash,label)=>{
+      const d=document.createElement('div');
+      Object.assign(d.style,{position:'absolute',left:0,width:'100%',top:Y(y)+'px',
+        borderTop:'1px '+(dash?'dashed':'solid')+' '+color});
+      stage.appendChild(d);
+      if(label){
+        const t=document.createElement('div');
+        Object.assign(t.style,{position:'absolute',left:P(6)+'px',top:(Y(y)-P(16))+'px',
+          color:color,fontSize:Math.max(8,P(15))+'px',background:'rgba(7,11,20,.72)',
+          padding:'0 4px',borderRadius:'3px',whiteSpace:'nowrap'});
+        t.textContent=label;
+        stage.appendChild(t);
+      }
+    };
+    hline(groundY,'#5fd08a88',true,'地面 y='+groundY.toFixed(0));
+    hline(0,'#33507a66',true,'中线');
+    hline(skillY+SKILL_H/2,'#c792ea44',true,'技能栏上沿');
+    // 中心距标注
+    const dy=groundY-(CHARS.H30047.maxY-CHARS.H30047.ay)*CHARS.H30047.s*gs-120*uiScale;
+    const seg=document.createElement('div');
+    Object.assign(seg.style,{position:'absolute',left:X(leftX)+'px',top:Y(dy)+'px',
+      width:P(centerDist)+'px',borderTop:'1px dashed #ffffff33'});
+    stage.appendChild(seg);
+    textAt((leftX+rightX)/2,dy,'中心距 '+centerDist.toFixed(0),{color:'#93a4c0',fontSize:P(16)+'px'});
+  }
+  if(safe){
+    const d=document.createElement('div');
+    Object.assign(d.style,{position:'absolute',inset:P(12)+'px',border:'1px dashed #ffcf6b66',
+      borderRadius:P(18)+'px'});
+    stage.appendChild(d);
+  }
+
+  // ---------- 世界条（镜头跟随可视化）----------
+  world.style.width=(W*k)+'px';
+  world.style.height='38px';
+  world.innerHTML='';
+  const wr=document.createElement('div');
+  Object.assign(wr.style,{position:'absolute',left:0,top:0,width:'100%',height:'100%',
+    background:'#0a1220'});
+  world.appendChild(wr);
+  // 世界边界
+  [-worldHalf,worldHalf].forEach(bx=>{
+    const l=((bx+worldHalf)/(2*worldHalf))*100;
+    const t=document.createElement('div');
+    Object.assign(t.style,{position:'absolute',left:l+'%',top:0,width:'2px',height:'100%',
+      background:'#3d6fa8'});
+    world.appendChild(t);
+  });
+  // 镜头可视窗
+  const camLeftPct=((camX-halfW+worldHalf)/(2*worldHalf))*100;
+  const camWidPct=((2*halfW)/(2*worldHalf))*100;
+  const cw=document.createElement('div');
+  Object.assign(cw.style,{position:'absolute',left:camLeftPct+'%',top:'2px',width:camWidPct+'%',
+    height:'calc(100% - 4px)',background:'#7fc4ff1f',border:'1px solid #7fc4ff88',
+    borderRadius:'5px'});
+  world.appendChild(cw);
+  const cap=document.createElement('div');
+  Object.assign(cap.style,{position:'absolute',left:'8px',top:'50%',transform:'translateY(-50%)',
+    fontSize:'10.5px',color:'#93a4c0',fontVariantNumeric:'tabular-nums'});
+  cap.textContent='世界 '+(worldHalf*2).toFixed(0)+'px（'+WORLD_SCREENS+' 屏宽） · 镜头 x='
+    +camX.toFixed(0)+' · 死区 ±90';
+  world.appendChild(cap);
+  // 两个角色在世界条上的位置
+  [[leftX,CHARS.E200004.c],[rightX,CHARS.H30047.c]].forEach(([px,col])=>{
+    const dot=document.createElement('div');
+    const p=((px+worldHalf)/(2*worldHalf))*100;
+    Object.assign(dot.style,{position:'absolute',left:p+'%',top:'50%',width:'7px',height:'7px',
+      marginTop:'-3.5px',marginLeft:'-3.5px',borderRadius:'50%',background:col});
+    world.appendChild(dot);
+  });
+
+  // ---------- 信息面板 ----------
+  // 越界判定看两件事：① 是否跑出世界边界；② 当前视口能否完整装下该角色
+  const halfBody=(id,mirror)=>{
+    const c=CHARS[id], sc=c.s*gs;
+    const l=mirror ? (c.ax-c.maxX)*sc : (c.minX-c.ax)*sc;
+    const r=mirror ? (c.ax-c.minX)*sc : (c.maxX-c.ax)*sc;
+    return [l,r];
+  };
+  const outOfWorld=[], outOfView=[];
+  const checkChar=(id,worldX,mirror,label)=>{
+    const [bl,br]=halfBody(id,mirror);
+    const minX=worldX+bl, maxX=worldX+br;
+    const dw=Math.max(-worldHalf-minX, maxX-worldHalf);
+    if(dw>1) outOfWorld.push(label+' 世界 +'+dw.toFixed(0));
+    const vl=minX-camX, vr=maxX-camX;
+    const dv=Math.max(-halfW-vl, vr-halfW);
+    if(dv>1) outOfView.push(label+' 视口 +'+dv.toFixed(0));
+  };
+  checkChar('E200004',leftX,false,'玄女');
+  checkChar('H30047',rightX,true,'武姬');
+
+  const overHtml = outOfWorld.length
+    ? `<span class="bad">出界 ${outOfWorld.join('，')} px</span>`
+    : (outOfView.length
+        ? `<span class="w">暂在视口外 ${outOfView.join('，')} px（镜头跟随会追上）</span>`
+        : '<span class="ok">双方均在世界内且已入镜</span>');
+
+  const rL=CHARS.E200004.range*gs, rR=CHARS.H30047.range*gs;
+  const canL=centerDist<=rL, canR=centerDist<=rR;
+  let judge;
+  if(canL&&canR) judge='<span class="ok">双方均已进入射程，同时开打</span>';
+  else if(canL) judge='<span class="w">仅左方在射程内 → 左方先开打</span>';
+  else if(canR) judge='<span class="w">仅右方在射程内 → 右方先开打</span>';
+  else judge='<span class="dim">双方都不在射程内，继续接近</span>';
+
+  document.getElementById('info').innerHTML=
+    `<b>${dev.key}</b> · ${dev.sw}×${dev.sh}<br>`
+    +`可视区 <span class="k">${W.toFixed(0)}×${H}</span>（fitHeight）<br>`
+    +`characterScale <span class="k">${globalScale.toFixed(2)}×</span> × 适配 ${gsAdapt.toFixed(2)} `
+    +`= 实际 <span class="k">${gs.toFixed(2)}</span><br>`
+    +`角色体高 <span class="k">${(BODY_TARGET*gs).toFixed(0)}px</span> · 地面 y=<span class="k">${groundY.toFixed(0)}</span>`
+    +`（含上移 ${groundOff}）<br>`
+    +`头顶血条 <span class="k">${(HEAD_BAR_W*uiScale).toFixed(0)}×${(HEAD_BAR_H*uiScale).toFixed(0)}</span>`
+    +`（uiScale ${uiScale.toFixed(2)}）<br>`
+    +`左射程 <span class="k">${rL.toFixed(0)}</span> · 右射程 <span class="k">${rR.toFixed(0)}</span> · `
+    +`中心距 <span class="k">${centerDist.toFixed(0)}</span><br>`
+    +`判定：${judge}<br>`
+    +`${overHtml}`;
+}
+
+const devBox=document.getElementById('devs');
+DEVICES.forEach((d,i)=>{
+  const b=document.createElement('button');
+  b.textContent=d.key;
+  b.className=i===cur?'on':'';
+  b.onclick=()=>{cur=i;[...devBox.children].forEach((c,j)=>c.className=j===i?'on':'');render();};
+  devBox.appendChild(b);
+});
+document.getElementById('tgGuide').onclick=e=>{guide=!guide;e.target.className=guide?'on':'';render();};
+document.getElementById('tgSafe').onclick=e=>{safe=!safe;e.target.className=safe?'on':'';render();};
+
+// 三个滑块分别对应 BattleConfig.ts 的 BATTLE.characterScale / groundOffsetY 与射程验证
+const gsInput=document.getElementById('gscale'), gsVal=document.getElementById('gscaleVal');
+gsInput.oninput=e=>{globalScale=+e.target.value;gsVal.textContent=globalScale.toFixed(2)+'×';render();};
+
+const goInput=document.getElementById('goff'), goVal=document.getElementById('goffVal');
+goInput.oninput=e=>{groundOff=+e.target.value;goVal.textContent=String(groundOff);render();};
+
+const cdInput=document.getElementById('cdist'), cdVal=document.getElementById('cdistVal');
+cdInput.oninput=e=>{centerDist=+e.target.value;cdVal.textContent=String(centerDist);render();};
+
+window.addEventListener('resize',render);
+gsInput.value=globalScale; gsVal.textContent=globalScale.toFixed(2)+'×';
+goInput.value=groundOff;   goVal.textContent=String(groundOff);
+cdInput.value=centerDist;  cdVal.textContent=String(centerDist);
+render();
+</script>
+</body>
+</html>

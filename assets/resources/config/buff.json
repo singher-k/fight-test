@@ -1,0 +1,157 @@
+{
+  "_table": "buff",
+  "_version": 1,
+  "_comment": "buff 表：一行一个 buff，被 skill.json 的 hits[].effects 按 id 引用。行为由字段决定，不看 buffType：① distance/height>0 走位移；② control 非空走控制；③ stats 非空走属性增减；④ duration<=0 立即结算；⑤ duration>0 且 tick>0 周期结算（dot / hot）；⑥ duration>0 且 tick<=0 到期结算一次。★ 数值方向由 sign 决定：-1 = 伤害，1 = 治疗，value 只写绝对值倍数（如 dmg 的 1 表示 1 倍攻击、技能里用 value 覆盖成 1.6 = 1.6 倍）；不写 sign 才退回 value 的正负号。buffType 只是分类标签，需要与 BUFFTYPE 枚举键名一致（枚举为空时跳过校验）。",
+  "rows": [
+    {
+      "id": "dmg",
+      "name": "伤害",
+      "buffType": "damage",
+      "target": "enemy",
+      "valueType": "atkMul",
+      "value": 1,
+      "sign": -1,
+      "color": "#ffffff"
+    },
+    {
+      "id": "heal",
+      "name": "治疗",
+      "buffType": "heal",
+      "target": "self",
+      "valueType": "maxHpRatio",
+      "value": 0.3,
+      "sign": 1,
+      "color": "#7ee787"
+    },
+    {
+      "id": "burn",
+      "name": "灼烧",
+      "buffType": "dot",
+      "target": "enemy",
+      "valueType": "atkMul",
+      "value": 0.15,
+      "sign": -1,
+      "duration": 4,
+      "tick": 1,
+      "stackMax": 3,
+      "stackMode": "stack",
+      "color": "#ff7a59"
+    },
+    {
+      "id": "bleed",
+      "name": "流血",
+      "buffType": "dot",
+      "target": "enemy",
+      "valueType": "atkMul",
+      "value": 0.12,
+      "sign": -1,
+      "duration": 5,
+      "tick": 1,
+      "stackMax": 3,
+      "stackMode": "stack",
+      "color": "#ff4d4d"
+    },
+    {
+      "id": "hot",
+      "name": "回春",
+      "buffType": "hot",
+      "target": "self",
+      "valueType": "maxHpRatio",
+      "value": 0.03,
+      "sign": 1,
+      "duration": 6,
+      "tick": 2,
+      "color": "#7ee787"
+    },
+    {
+      "id": "slow",
+      "name": "减速",
+      "buffType": "debuff",
+      "target": "enemy",
+      "duration": 2.5,
+      "stats": {
+        "moveSpeed": -0.4
+      },
+      "stackMax": 2,
+      "stackMode": "refresh",
+      "color": "#7fd4ff"
+    },
+    {
+      "id": "armorBreak",
+      "name": "破甲",
+      "buffType": "debuff",
+      "target": "enemy",
+      "duration": 4,
+      "stats": {
+        "def": -0.35
+      },
+      "stackMax": 2,
+      "stackMode": "refresh",
+      "color": "#ffd166"
+    },
+    {
+      "id": "atkUp",
+      "name": "战意",
+      "buffType": "buff",
+      "target": "self",
+      "duration": 5,
+      "stats": {
+        "atk": 0.3
+      },
+      "color": "#ffd166"
+    },
+    {
+      "id": "defUp",
+      "name": "铁壁",
+      "buffType": "buff",
+      "target": "self",
+      "duration": 5,
+      "stats": {
+        "def": 0.4
+      },
+      "color": "#8fb3ff"
+    },
+    {
+      "id": "stun",
+      "name": "眩晕",
+      "buffType": "control",
+      "target": "enemy",
+      "duration": 1.2,
+      "control": "stun",
+      "stackMode": "ignore",
+      "color": "#ffffff"
+    },
+    {
+      "id": "root",
+      "name": "定身",
+      "buffType": "control",
+      "target": "enemy",
+      "duration": 1.5,
+      "control": "root",
+      "stackMode": "ignore",
+      "color": "#6fe3ff"
+    },
+    {
+      "id": "knockback",
+      "name": "击退",
+      "buffType": "displace",
+      "target": "enemy",
+      "distance": 130,
+      "moveTime": 0.35,
+      "stackMode": "ignore",
+      "color": "#9fb3c8"
+    },
+    {
+      "id": "knockup",
+      "name": "击飞",
+      "buffType": "displace",
+      "target": "enemy",
+      "height": 150,
+      "moveTime": 0.6,
+      "control": "stun",
+      "duration": 0.6,
+      "stackMode": "ignore",
+      "color": "#ffd166"
+    }
+  ]
+}

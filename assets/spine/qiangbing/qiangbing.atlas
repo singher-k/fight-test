@@ -1,0 +1,370 @@
+
+qiangbing.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bai1
+  rotate: true
+  xy: 1095, 157
+  size: 120, 104
+  orig: 121, 104
+  offset: 0, 0
+  index: -1
+bai2
+  rotate: true
+  xy: 1201, 194
+  size: 86, 60
+  orig: 86, 61
+  offset: 0, 1
+  index: -1
+dang
+  rotate: false
+  xy: 304, 23
+  size: 82, 183
+  orig: 82, 183
+  offset: 0, 0
+  index: -1
+guan
+  rotate: false
+  xy: 1185, 42
+  size: 89, 113
+  orig: 89, 113
+  offset: 0, 0
+  index: -1
+jianjia1
+  rotate: true
+  xy: 1090, 794
+  size: 83, 76
+  orig: 83, 76
+  offset: 0, 0
+  index: -1
+jianjia1-n
+  rotate: false
+  xy: 790, 235
+  size: 63, 40
+  orig: 63, 40
+  offset: 0, 0
+  index: -1
+jianjia2
+  rotate: true
+  xy: 639, 3
+  size: 54, 66
+  orig: 56, 67
+  offset: 1, 0
+  index: -1
+jiao1
+  rotate: false
+  xy: 707, 4
+  size: 53, 53
+  orig: 54, 53
+  offset: 0, 0
+  index: -1
+jiao2
+  rotate: false
+  xy: 928, 231
+  size: 81, 46
+  orig: 82, 46
+  offset: 0, 0
+  index: -1
+nian
+  rotate: false
+  xy: 1188, 282
+  size: 53, 53
+  orig: 53, 54
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 168, 21
+  size: 134, 185
+  orig: 134, 188
+  offset: 0, 3
+  index: -1
+shou1
+  rotate: true
+  xy: 548, 3
+  size: 50, 44
+  orig: 50, 45
+  offset: 0, 1
+  index: -1
+shou2
+  rotate: true
+  xy: 594, 4
+  size: 49, 43
+  orig: 49, 44
+  offset: 0, 0
+  index: -1
+shoubi1
+  rotate: false
+  xy: 1095, 39
+  size: 88, 116
+  orig: 90, 116
+  offset: 1, 0
+  index: -1
+shoubi2
+  rotate: false
+  xy: 1176, 437
+  size: 96, 100
+  orig: 97, 104
+  offset: 1, 1
+  index: -1
+shoubi3
+  rotate: true
+  xy: 1107, 415
+  size: 106, 67
+  orig: 107, 68
+  offset: 0, 1
+  index: -1
+shoubi4
+  rotate: false
+  xy: 1118, 539
+  size: 63, 105
+  orig: 64, 106
+  offset: 0, 0
+  index: -1
+toufa1
+  rotate: true
+  xy: 388, 13
+  size: 22, 58
+  orig: 26, 64
+  offset: 0, 6
+  index: -1
+toufa2
+  rotate: true
+  xy: 304, 2
+  size: 19, 54
+  orig: 19, 54
+  offset: 0, 0
+  index: -1
+toukui
+  rotate: true
+  xy: 1107, 309
+  size: 104, 79
+  orig: 109, 82
+  offset: 4, 0
+  index: -1
+toukui-n
+  rotate: false
+  xy: 855, 236
+  size: 71, 39
+  orig: 71, 39
+  offset: 0, 0
+  index: -1
+tui1
+  rotate: false
+  xy: 1055, 646
+  size: 111, 144
+  orig: 112, 144
+  offset: 1, 0
+  index: -1
+tui2
+  rotate: false
+  xy: 2, 8
+  size: 164, 198
+  orig: 165, 206
+  offset: 0, 8
+  index: -1
+tui3
+  rotate: false
+  xy: 626, 59
+  size: 100, 153
+  orig: 102, 153
+  offset: 1, 0
+  index: -1
+tui4
+  rotate: false
+  xy: 388, 37
+  size: 158, 169
+  orig: 160, 171
+  offset: 1, 1
+  index: -1
+tx/NPC_1013_C10
+  rotate: true
+  xy: 571, 756
+  size: 266, 106
+  orig: 300, 128
+  offset: 5, 10
+  index: -1
+tx/NPC_1013_C11
+  rotate: true
+  xy: 476, 474
+  size: 272, 102
+  orig: 300, 128
+  offset: 4, 11
+  index: -1
+tx/NPC_1013_C12
+  rotate: true
+  xy: 674, 493
+  size: 261, 88
+  orig: 300, 128
+  offset: 33, 20
+  index: -1
+tx/NPC_1013_C13
+  rotate: true
+  xy: 679, 761
+  size: 261, 87
+  orig: 300, 128
+  offset: 33, 20
+  index: -1
+tx/NPC_1013_C14
+  rotate: true
+  xy: 988, 547
+  size: 233, 65
+  orig: 300, 128
+  offset: 67, 31
+  index: -1
+tx/NPC_1013_C20
+  rotate: false
+  xy: 373, 458
+  size: 101, 274
+  orig: 150, 300
+  offset: 26, 7
+  index: -1
+tx/NPC_1013_C21
+  rotate: false
+  xy: 373, 734
+  size: 99, 288
+  orig: 150, 300
+  offset: 27, 3
+  index: -1
+tx/NPC_1013_C22
+  rotate: false
+  xy: 474, 748
+  size: 95, 274
+  orig: 150, 300
+  offset: 27, 13
+  index: -1
+tx/NPC_1013_C23
+  rotate: false
+  xy: 580, 488
+  size: 92, 266
+  orig: 150, 300
+  offset: 28, 25
+  index: -1
+tx/NPC_1013_C24
+  rotate: false
+  xy: 696, 231
+  size: 92, 260
+  orig: 150, 300
+  offset: 28, 35
+  index: -1
+tx/NPC_1013_C25
+  rotate: false
+  xy: 1188, 337
+  size: 90, 98
+  orig: 150, 300
+  offset: 30, 112
+  index: -1
+tx/NPC_1013_D41
+  rotate: false
+  xy: 473, 214
+  size: 221, 242
+  orig: 256, 256
+  offset: 24, 7
+  index: -1
+tx/NPC_1013_D42
+  rotate: false
+  xy: 764, 518
+  size: 222, 241
+  orig: 256, 256
+  offset: 23, 8
+  index: -1
+tx/NPC_1013_D43
+  rotate: false
+  xy: 768, 782
+  size: 224, 240
+  orig: 256, 256
+  offset: 21, 8
+  index: -1
+tx/NPC_1013_D44
+  rotate: true
+  xy: 762, 3
+  size: 226, 239
+  orig: 256, 256
+  offset: 19, 9
+  index: -1
+tx/NPC_1013_D45
+  rotate: false
+  xy: 875, 279
+  size: 230, 237
+  orig: 256, 256
+  offset: 17, 11
+  index: -1
+tx/NPC_1013_D46
+  rotate: false
+  xy: 237, 208
+  size: 234, 236
+  orig: 256, 256
+  offset: 13, 11
+  index: -1
+tx/NPC_1013_Y10
+  rotate: true
+  xy: 548, 55
+  size: 157, 76
+  orig: 256, 128
+  offset: 90, 15
+  index: -1
+tx/NPC_1013_Y11
+  rotate: true
+  xy: 1003, 12
+  size: 217, 90
+  orig: 256, 128
+  offset: 28, 14
+  index: -1
+tx/NPC_1013_Y12
+  rotate: true
+  xy: 994, 792
+  size: 230, 94
+  orig: 256, 128
+  offset: 23, 14
+  index: -1
+tx/NPC_1013_Y13
+  rotate: true
+  xy: 790, 277
+  size: 239, 83
+  orig: 256, 128
+  offset: 9, 15
+  index: -1
+tx/NPC_1013_Y14
+  rotate: true
+  xy: 1090, 879
+  size: 143, 47
+  orig: 256, 128
+  offset: 45, 16
+  index: -1
+tx/NPC_1013_Y15
+  rotate: false
+  xy: 168, 2
+  size: 65, 17
+  orig: 256, 128
+  offset: 28, 19
+  index: -1
+weibo
+  rotate: true
+  xy: 1055, 523
+  size: 121, 61
+  orig: 121, 63
+  offset: 0, 0
+  index: -1
+wuqi
+  rotate: true
+  xy: 2, 208
+  size: 814, 233
+  orig: 814, 234
+  offset: 0, 1
+  index: -1
+yaodai
+  rotate: true
+  xy: 1139, 895
+  size: 127, 105
+  orig: 138, 105
+  offset: 1, 0
+  index: -1
+yy
+  rotate: true
+  xy: 237, 446
+  size: 576, 134
+  orig: 615, 155
+  offset: 20, 10
+  index: -1

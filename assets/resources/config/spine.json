@@ -1,0 +1,158 @@
+{
+  "_table": "spine",
+  "_version": 1,
+  "_comment": "角色资源表：一行一个角色的 Spine 显示参数。path 为 Asset Bundle 内路径（不含扩展名）；scale 为该资源的基准缩放（口径：统一体高 420px / 实测体高）；anchorX/anchorY 为骨架坐标系里的对齐参考点（脚底中心），渲染时对齐到站位点；headY 用于定位头顶血条与飘字。flip 表示资源原生朝向与标准相反（标准：站在左侧时面朝右），置 true 会整体水平镜像，锚点自动对称、不用改 anchorX。",
+  "rows": [
+    {
+      "id": "E200004",
+      "bundle": "spine",
+      "path": "E200004/E200004",
+      "scale": 0.87,
+      "anchorX": -10,
+      "anchorY": -17,
+      "headY": 445,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "H30027",
+      "bundle": "spine",
+      "path": "H30027/H30027",
+      "scale": 0.76,
+      "anchorX": 0,
+      "anchorY": -111,
+      "headY": 444,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "H30032",
+      "bundle": "spine",
+      "path": "H30032/H30032",
+      "scale": 0.86,
+      "anchorX": 0,
+      "anchorY": -94,
+      "headY": 394,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "H30039",
+      "bundle": "spine",
+      "path": "H30039/H30039",
+      "scale": 0.8,
+      "anchorX": -14,
+      "anchorY": -86,
+      "headY": 419,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "H30047",
+      "bundle": "spine",
+      "path": "H30047/H30047",
+      "scale": 0.78,
+      "anchorX": -15,
+      "anchorY": -95,
+      "headY": 444,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "zhaoyun",
+      "bundle": "spine",
+      "path": "zhaoyun/zhaoyun",
+      "scale": 0.471,
+      "anchorX": 53,
+      "anchorY": -37,
+      "headY": 855,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "zhangliao",
+      "bundle": "spine",
+      "path": "zhangliao/zhangliao",
+      "scale": 0.337,
+      "anchorX": 20,
+      "anchorY": -43,
+      "headY": 1202,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "zhoutai",
+      "bundle": "spine",
+      "path": "zhoutai/zhoutai",
+      "scale": 0.366,
+      "anchorX": 71,
+      "anchorY": -88,
+      "headY": 1061,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "xuzhu",
+      "bundle": "spine",
+      "path": "xuzhu/xuzhu",
+      "scale": 0.316,
+      "anchorX": 24,
+      "anchorY": -93,
+      "headY": 1235,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "qiangbing",
+      "bundle": "spine",
+      "path": "qiangbing/qiangbing",
+      "scale": 0.748,
+      "anchorX": 35,
+      "anchorY": 14,
+      "flip": true,
+      "headY": 547,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "mulan",
+      "bundle": "spine",
+      "path": "mulan/mulan",
+      "scale": 0.729,
+      "anchorX": -8,
+      "anchorY": -19,
+      "headY": 557,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "lvbu",
+      "bundle": "spine",
+      "path": "lvbu/lvbu",
+      "scale": 0.56,
+      "anchorX": -56,
+      "anchorY": -33,
+      "headY": 716,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "guanyu",
+      "bundle": "spine",
+      "path": "guanyu/guanyu",
+      "scale": 0.511,
+      "anchorX": -34,
+      "anchorY": -41,
+      "headY": 781,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    }
+  ]
+}
