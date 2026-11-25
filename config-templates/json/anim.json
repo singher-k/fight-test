@@ -1,0 +1,445 @@
+{
+  "rows": [
+    {
+      "charId": "E200004",
+      "kind": "idle",
+      "anim": "stand",
+      "duration": 2667,
+      "order": 0
+    },
+    {
+      "charId": "E200004",
+      "kind": "run",
+      "anim": "run",
+      "duration": 667,
+      "order": 0
+    },
+    {
+      "charId": "E200004",
+      "kind": "hurt",
+      "anim": "",
+      "duration": 0,
+      "order": 0
+    },
+    {
+      "charId": "E200004",
+      "kind": "attack",
+      "anim": "action1",
+      "duration": 1500,
+      "order": 0
+    },
+    {
+      "charId": "E200004",
+      "kind": "attack",
+      "anim": "action2",
+      "duration": 2267,
+      "order": 1
+    },
+    {
+      "charId": "H30027",
+      "kind": "idle",
+      "anim": "stand2",
+      "duration": 2667,
+      "order": 0
+    },
+    {
+      "charId": "H30027",
+      "kind": "run",
+      "anim": "run",
+      "duration": 667,
+      "order": 0
+    },
+    {
+      "charId": "H30027",
+      "kind": "hurt",
+      "anim": "hurt",
+      "duration": 400,
+      "order": 0
+    },
+    {
+      "charId": "H30027",
+      "kind": "attack",
+      "anim": "action1",
+      "duration": 1500,
+      "order": 0
+    },
+    {
+      "charId": "H30027",
+      "kind": "attack",
+      "anim": "action2",
+      "duration": 1833,
+      "order": 1
+    },
+    {
+      "charId": "H30032",
+      "kind": "idle",
+      "anim": "stand2",
+      "duration": 3000,
+      "order": 0
+    },
+    {
+      "charId": "H30032",
+      "kind": "run",
+      "anim": "run",
+      "duration": 800,
+      "order": 0
+    },
+    {
+      "charId": "H30032",
+      "kind": "hurt",
+      "anim": "hurt",
+      "duration": 333,
+      "order": 0
+    },
+    {
+      "charId": "H30032",
+      "kind": "attack",
+      "anim": "action3",
+      "duration": 833,
+      "order": 0
+    },
+    {
+      "charId": "H30032",
+      "kind": "attack",
+      "anim": "action1",
+      "duration": 1500,
+      "order": 1
+    },
+    {
+      "charId": "H30039",
+      "kind": "idle",
+      "anim": "stand2",
+      "duration": 3000,
+      "order": 0
+    },
+    {
+      "charId": "H30039",
+      "kind": "run",
+      "anim": "run",
+      "duration": 1000,
+      "order": 0
+    },
+    {
+      "charId": "H30039",
+      "kind": "hurt",
+      "anim": "hurt",
+      "duration": 333,
+      "order": 0
+    },
+    {
+      "charId": "H30039",
+      "kind": "attack",
+      "anim": "action1",
+      "duration": 1733,
+      "order": 0
+    },
+    {
+      "charId": "H30039",
+      "kind": "attack",
+      "anim": "action2",
+      "duration": 2333,
+      "order": 1
+    },
+    {
+      "charId": "H30047",
+      "kind": "idle",
+      "anim": "stand2",
+      "duration": 1333,
+      "order": 0
+    },
+    {
+      "charId": "H30047",
+      "kind": "run",
+      "anim": "run",
+      "duration": 667,
+      "order": 0
+    },
+    {
+      "charId": "H30047",
+      "kind": "hurt",
+      "anim": "hurt",
+      "duration": 333,
+      "order": 0
+    },
+    {
+      "charId": "H30047",
+      "kind": "attack",
+      "anim": "action1",
+      "duration": 1400,
+      "order": 0
+    },
+    {
+      "charId": "H30047",
+      "kind": "attack",
+      "anim": "action3",
+      "duration": 1400,
+      "order": 1
+    },
+    {
+      "charId": "zhaoyun",
+      "kind": "idle",
+      "anim": "idle",
+      "duration": 2000,
+      "order": 0
+    },
+    {
+      "charId": "zhaoyun",
+      "kind": "run",
+      "anim": "walk",
+      "duration": 670,
+      "order": 0
+    },
+    {
+      "charId": "zhaoyun",
+      "kind": "hurt",
+      "anim": "hit",
+      "duration": 500,
+      "order": 0
+    },
+    {
+      "charId": "zhaoyun",
+      "kind": "attack",
+      "anim": "attack_1",
+      "duration": 1170,
+      "order": 0
+    },
+    {
+      "charId": "zhaoyun",
+      "kind": "attack",
+      "anim": "attack_2",
+      "duration": 2170,
+      "order": 1
+    },
+    {
+      "charId": "zhangliao",
+      "kind": "idle",
+      "anim": "idle",
+      "duration": 2000,
+      "order": 0
+    },
+    {
+      "charId": "zhangliao",
+      "kind": "run",
+      "anim": "walk",
+      "duration": 670,
+      "order": 0
+    },
+    {
+      "charId": "zhangliao",
+      "kind": "hurt",
+      "anim": "hit",
+      "duration": 500,
+      "order": 0
+    },
+    {
+      "charId": "zhangliao",
+      "kind": "attack",
+      "anim": "attack_1",
+      "duration": 2000,
+      "order": 0
+    },
+    {
+      "charId": "zhoutai",
+      "kind": "idle",
+      "anim": "idle",
+      "duration": 2000,
+      "order": 0
+    },
+    {
+      "charId": "zhoutai",
+      "kind": "run",
+      "anim": "walk",
+      "duration": 670,
+      "order": 0
+    },
+    {
+      "charId": "zhoutai",
+      "kind": "hurt",
+      "anim": "hit",
+      "duration": 500,
+      "order": 0
+    },
+    {
+      "charId": "zhoutai",
+      "kind": "attack",
+      "anim": "attack_1",
+      "duration": 1170,
+      "order": 0
+    },
+    {
+      "charId": "zhoutai",
+      "kind": "attack",
+      "anim": "attack_2",
+      "duration": 2070,
+      "order": 1
+    },
+    {
+      "charId": "xuzhu",
+      "kind": "idle",
+      "anim": "idle",
+      "duration": 2000,
+      "order": 0
+    },
+    {
+      "charId": "xuzhu",
+      "kind": "run",
+      "anim": "walk",
+      "duration": 1000,
+      "order": 0
+    },
+    {
+      "charId": "xuzhu",
+      "kind": "hurt",
+      "anim": "hit",
+      "duration": 500,
+      "order": 0
+    },
+    {
+      "charId": "xuzhu",
+      "kind": "attack",
+      "anim": "attack_1",
+      "duration": 1330,
+      "order": 0
+    },
+    {
+      "charId": "xuzhu",
+      "kind": "attack",
+      "anim": "attack_2",
+      "duration": 2470,
+      "order": 1
+    },
+    {
+      "charId": "qiangbing",
+      "kind": "idle",
+      "anim": "idle",
+      "duration": 2000,
+      "order": 0
+    },
+    {
+      "charId": "qiangbing",
+      "kind": "run",
+      "anim": "walk",
+      "duration": 670,
+      "order": 0
+    },
+    {
+      "charId": "qiangbing",
+      "kind": "hurt",
+      "anim": "hit",
+      "duration": 500,
+      "order": 0
+    },
+    {
+      "charId": "qiangbing",
+      "kind": "attack",
+      "anim": "attack_1",
+      "duration": 1330,
+      "order": 0
+    },
+    {
+      "charId": "qiangbing",
+      "kind": "attack",
+      "anim": "attack_2",
+      "duration": 1830,
+      "order": 1
+    },
+    {
+      "charId": "mulan",
+      "kind": "idle",
+      "anim": "idle",
+      "duration": 2000,
+      "order": 0
+    },
+    {
+      "charId": "mulan",
+      "kind": "run",
+      "anim": "walk",
+      "duration": 670,
+      "order": 0
+    },
+    {
+      "charId": "mulan",
+      "kind": "hurt",
+      "anim": "hit",
+      "duration": 500,
+      "order": 0
+    },
+    {
+      "charId": "mulan",
+      "kind": "attack",
+      "anim": "attack_1",
+      "duration": 1670,
+      "order": 0
+    },
+    {
+      "charId": "mulan",
+      "kind": "attack",
+      "anim": "attack_4",
+      "duration": 2500,
+      "order": 1
+    },
+    {
+      "charId": "lvbu",
+      "kind": "idle",
+      "anim": "idle",
+      "duration": 2000,
+      "order": 0
+    },
+    {
+      "charId": "lvbu",
+      "kind": "run",
+      "anim": "walk",
+      "duration": 670,
+      "order": 0
+    },
+    {
+      "charId": "lvbu",
+      "kind": "hurt",
+      "anim": "hit",
+      "duration": 500,
+      "order": 0
+    },
+    {
+      "charId": "lvbu",
+      "kind": "attack",
+      "anim": "attack_1",
+      "duration": 1330,
+      "order": 0
+    },
+    {
+      "charId": "guanyu",
+      "kind": "idle",
+      "anim": "idle",
+      "duration": 2000,
+      "order": 0
+    },
+    {
+      "charId": "guanyu",
+      "kind": "run",
+      "anim": "walk",
+      "duration": 670,
+      "order": 0
+    },
+    {
+      "charId": "guanyu",
+      "kind": "hurt",
+      "anim": "hit",
+      "duration": 500,
+      "order": 0
+    },
+    {
+      "charId": "guanyu",
+      "kind": "attack",
+      "anim": "attack_1",
+      "duration": 1330,
+      "order": 0
+    },
+    {
+      "charId": "guanyu",
+      "kind": "attack",
+      "anim": "attack_2",
+      "duration": 2500,
+      "order": 1
+    }
+  ]
+}

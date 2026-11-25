@@ -1,0 +1,154 @@
+{
+  "rows": [
+    {
+      "id": "dmg",
+      "name": "伤害",
+      "buffType": "damage",
+      "target": "enemy",
+      "value": 10000,
+      "valueType": "atkMul",
+      "sign": -1,
+      "color": "#ffffff"
+    },
+    {
+      "id": "heal",
+      "name": "治疗",
+      "buffType": "heal",
+      "target": "self",
+      "value": 3000,
+      "valueType": "maxHpRatio",
+      "sign": 1,
+      "color": "#7ee787"
+    },
+    {
+      "id": "burn",
+      "name": "灼烧",
+      "buffType": "dot",
+      "target": "enemy",
+      "duration": 4000,
+      "tick": 1000,
+      "value": 1500,
+      "valueType": "atkMul",
+      "sign": -1,
+      "stackMax": 3,
+      "stackMode": "stack",
+      "color": "#ff7a59"
+    },
+    {
+      "id": "bleed",
+      "name": "流血",
+      "buffType": "dot",
+      "target": "enemy",
+      "duration": 5000,
+      "tick": 1000,
+      "value": 1200,
+      "valueType": "atkMul",
+      "sign": -1,
+      "stackMax": 3,
+      "stackMode": "stack",
+      "color": "#ff4d4d"
+    },
+    {
+      "id": "hot",
+      "name": "回春",
+      "buffType": "hot",
+      "target": "self",
+      "duration": 6000,
+      "tick": 2000,
+      "value": 300,
+      "valueType": "maxHpRatio",
+      "sign": 1,
+      "color": "#7ee787"
+    },
+    {
+      "id": "slow",
+      "name": "减速",
+      "buffType": "debuff",
+      "target": "enemy",
+      "duration": 2500,
+      "stats": {
+        "moveSpeed": -4000
+      },
+      "stackMax": 2,
+      "stackMode": "refresh",
+      "color": "#7fd4ff"
+    },
+    {
+      "id": "armorBreak",
+      "name": "破甲",
+      "buffType": "debuff",
+      "target": "enemy",
+      "duration": 4000,
+      "stats": {
+        "def": -3500
+      },
+      "stackMax": 2,
+      "stackMode": "refresh",
+      "color": "#ffd166"
+    },
+    {
+      "id": "atkUp",
+      "name": "战意",
+      "buffType": "buff",
+      "target": "self",
+      "duration": 5000,
+      "stats": {
+        "atk": 3000
+      },
+      "color": "#ffd166"
+    },
+    {
+      "id": "defUp",
+      "name": "铁壁",
+      "buffType": "buff",
+      "target": "self",
+      "duration": 5000,
+      "stats": {
+        "def": 4000
+      },
+      "color": "#8fb3ff"
+    },
+    {
+      "id": "stun",
+      "name": "眩晕",
+      "buffType": "control",
+      "target": "enemy",
+      "duration": 1200,
+      "control": "stun",
+      "stackMode": "ignore",
+      "color": "#ffffff"
+    },
+    {
+      "id": "root",
+      "name": "定身",
+      "buffType": "control",
+      "target": "enemy",
+      "duration": 1500,
+      "control": "root",
+      "stackMode": "ignore",
+      "color": "#6fe3ff"
+    },
+    {
+      "id": "knockback",
+      "name": "击退",
+      "buffType": "displace",
+      "target": "enemy",
+      "distance": 130,
+      "moveTime": 350,
+      "stackMode": "ignore",
+      "color": "#9fb3c8"
+    },
+    {
+      "id": "knockup",
+      "name": "击飞",
+      "buffType": "displace",
+      "target": "enemy",
+      "duration": 600,
+      "control": "stun",
+      "height": 150,
+      "moveTime": 600,
+      "stackMode": "ignore",
+      "color": "#ffd166"
+    }
+  ]
+}

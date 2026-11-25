@@ -1,184 +1,333 @@
 /**
  * 配置表的行结构定义
  *
- * 6 张表都是「扁平行式」：一行一条记录，用 id / charId 做关联，不嵌套对象。
- *   battle.json     全局参数（键值，无行概念）
- *   character.json  角色战斗数值       主键 id
- *   spine.json      角色资源显示参数   主键 id（外键 → character.id）
- *   anim.json       动画引用           外键 charId + kind + order
- *   buff.json       buff 定义          主键 id（被 skill 的 effects 引用）
- *   skill.json      技能               外键 charId + slot
+ * ⚠ 本文件由 config-templates/gen-templates.py 自动生成，请勿手改。
+ *   要改字段：编辑 config-templates/schema.py，然后重跑生成器。
  *
- * 这里只描述「JSON 里长什么样」；运行时用的 CharacterConfig / SkillDef 在
- * BattleConfig.ts 与 SkillTypes.ts，两者由 GameConfig 做转换。
+ * 这里只描述「JSON 里长什么样」。运行时用的 CharacterConfig / SkillDef 在
+ * BattleConfig.ts 与 SkillTypes.ts，两者由 GameConfig 解析转换而来。
+ *
+ * 数据文件：assets/resources/config/*.json
  */
 
-/** 行式表的通用外壳 */
-export interface TableSheet<T> {
-    /** 表名，用于自检 */
-    _table: string;
-    /** 表结构版本 */
-    _version: number;
-    /** 说明（可选） */
-    _comment?: string;
-    /** 数据行 */
-    rows: T[];
-}
+/** anim.json 的动画类别 */
+export type AnimKind = 'idle' | 'run' | 'hurt' | 'attack';
 
 /** character.json 的一行：角色的战斗数值 */
 export interface CharacterRow {
-    /** 主键，与 spine.json 的 id、anim/skill 的 charId 对应 */
+    /**
+     * 角色id
+     * 主键。spine.json 用同一个 id；anim / skill / hit 里叫 charId
+     */
     id: string;
     /** 显示名 */
     name: string;
+    /** 最大生命 */
     maxHp: number;
+    /** 攻击力 */
     atk: number;
+    /** 防御力 */
     def: number;
-    /** 暴击率 0~1 */
+    /**
+     * 暴击率(万分比)
+     * 万分比：1000 = 10%。GameConfig 读入时自动 /10000
+     */
     critRate: number;
-    /** 普攻射程（两人中心距，720×1280 基准像素） */
+    /**
+     * 普攻射程
+     * 两人中心距，720×1280 基准像素
+     */
     attackRange: number;
-    /** 移动速度（px/s，720×1280 基准像素） */
+    /**
+     * 移动速度
+     * px/s，720×1280 基准像素
+     */
     moveSpeed: number;
-    /** 主题色 #rrggbb（血条 / 名字 / 选中态） */
+    /**
+     * 主题色
+     * #rrggbb，用于血条 / 名字 / 选中态
+     */
     accent: string;
 }
 
 /** spine.json 的一行：角色的资源与显示参数 */
 export interface SpineRow {
+    /**
+     * 角色id
+     * 外键：character.json 的 id
+     */
     id: string;
-    /** Asset Bundle 名，缺省用 battle.json 外的默认值 'spine' */
+    /**
+     * 资源包
+     * Asset Bundle 名，缺省 'spine'
+     */
     bundle?: string;
-    /** Bundle 内路径，不含扩展名 */
+    /**
+     * 资源路径
+     * Bundle 内路径，不含扩展名
+     */
     path: string;
-    /** 资源基准缩放（把各角色统一到同一体高） */
+    /**
+     * 基准缩放(万分比)
+     * 万分比：3160 = 0.316。把各角色统一到同一体高
+     */
     scale: number;
-    /** 骨架坐标系里的对齐参考点 X（身体中轴 / 脚底中心） */
+    /**
+     * 锚点X
+     * 骨架坐标系里的对齐参考点 X
+     */
     anchorX: number;
-    /** 骨架坐标系里的对齐参考点 Y（脚底） */
+    /**
+     * 锚点Y
+     * 骨架坐标系里的对齐参考点 Y（脚底）
+     */
     anchorY: number;
-    /** 头顶在骨架坐标系里的 Y（定位头顶血条与飘字） */
+    /**
+     * 头顶Y
+     * 头顶在骨架坐标系里的 Y，用于定位血条与飘字
+     */
     headY: number;
     /**
-     * 资源自身朝向是否与「标准朝右」相反
-     *
-     * 项目约定：facing = 1（站在左侧）时角色面朝右。少数外包资源的骨骼
-     * 默认面朝左，把它置 true，渲染时会整体水平镜像。
-     * 可写 true / false（也接受 1 / 0）。
+     * 水平翻转
+     * 资源自身朝向与「标准朝右」相反时填 true（也可写 1/0），渲染时整体镜像
      */
     flip?: boolean | number;
-    /** 像素级微调（屏幕方向，不受 flip 影响） */
+    /**
+     * 微调X
+     * 像素级微调，不受 flip 影响
+     */
     offsetX?: number;
+    /**
+     * 微调Y
+     * 像素级微调，不受 flip 影响
+     */
     offsetY?: number;
 }
 
-/** anim.json 的动画类别 */
-export type AnimKind = 'idle' | 'run' | 'hurt' | 'attack';
-
 /** anim.json 的一行：一个动画引用 */
 export interface AnimRow {
+    /**
+     * 角色id
+     * 外键：character.json 的 id
+     */
     charId: string;
+    /**
+     * 动画类别
+     * idle 待机 / run 移动 / hurt 受击 / attack 普攻
+     */
     kind: AnimKind;
-    /** spine 动画名；空字符串表示该角色没有这个动作 */
+    /**
+     * 动画名
+     * Spine 动画名；空字符串表示该角色没有这个动作
+     */
     anim: string;
-    /** 骨架内原始时长（秒） */
+    /**
+     * 原始时长(毫秒)
+     * 毫秒：1500 = 1.5 秒。骨架内原始时长，用于算播放倍速
+     */
     duration: number;
-    /** 仅 attack 有意义：普攻动作池的轮换顺序，升序 */
+    /**
+     * 轮换顺序
+     * 仅 attack 有意义：普攻动作池的轮换顺序，升序；缺省按行号
+     */
     order?: number;
 }
 
 /** buff.json 的一行：一个 buff 的定义 */
 export interface BuffRow {
-    /** 主键，skill.json 的 effects 里按它引用 */
+    /**
+     * buffid
+     * 主键，hit.json 的 e1..e4 效果格里按它引用
+     */
     id: string;
+    /**
+     * 显示名
+     * 飘字与日志用
+     */
     name: string;
-    /** BUFFTYPE 的键名（仅分类，不参与行为分发） */
+    /**
+     * 分类
+     * BUFFTYPE 的键名，仅做标签，不参与行为分发
+     */
     buffType: string;
-
-    /** 施加对象：self / enemy，缺省 enemy */
+    /**
+     * 施加对象
+     * 缺省 enemy
+     */
     target?: 'self' | 'enemy';
-    /** 持续秒数；0/缺省 = 瞬时 */
+    /**
+     * 持续时长(毫秒)
+     * 毫秒：1500 = 1.5 秒。0 / 缺省 = 瞬时
+     */
     duration?: number;
-    /** 周期结算间隔（秒）；与 duration 配合出 dot / hot */
+    /**
+     * 结算间隔(毫秒)
+     * 毫秒：500 = 0.5 秒。与 duration 配合出 dot / hot
+     */
     tick?: number;
-
-    /** 数值绝对值：方向由 sign 决定，这里只写倍数（如 1.6 = 1.6 倍攻击） */
+    /**
+     * 数值(万分比)
+     * 万分比：16000 = 1.6 倍攻击。只写绝对值，方向由 sign 决定
+     */
     value?: number;
-    /** 数值口径：atkMul / atkFlat / maxHpRatio / flat */
+    /**
+     * 数值口径
+     * 攻击力百分比 / 固定攻击力 / 目标最大生命百分比 / 固定数值
+     */
     valueType?: 'atkMul' | 'atkFlat' | 'maxHpRatio' | 'flat';
-    /** 结算方向：-1 伤害 / 1 治疗；缺省时按 value 的正负号 */
+    /**
+     * 结算方向
+     * -1 伤害 / 1 治疗；0 或缺省时退回按 value 的正负号
+     */
     sign?: -1 | 0 | 1;
-
-    /** 属性百分比增减，例如 { "atk": 0.3, "moveSpeed": -0.4 } */
+    /**
+     * 属性增减(万分比)
+     * 每项都是万分比：{ "atk": 3000, "moveSpeed": -4000 } = 攻击 +30%、移速 -40%
+     */
     stats?: { atk?: number; def?: number; moveSpeed?: number; critRate?: number };
-    /** 控制：stun（眩晕）/ root（定身）/ silence（沉默） */
+    /**
+     * 控制类型
+     * 眩晕 / 定身 / 沉默
+     */
     control?: 'stun' | 'root' | 'silence';
-    /** 击退距离（世界单位） */
+    /**
+     * 击退距离
+     * 世界单位（整数像素，不是万分比）
+     */
     distance?: number;
-    /** 击飞高度（世界单位），> 0 走抛物线 */
+    /**
+     * 击飞高度
+     * 世界单位，> 0 走抛物线
+     */
     height?: number;
-    /** 位移耗时（秒） */
+    /**
+     * 位移耗时(毫秒)
+     * 毫秒：350 = 0.35 秒
+     */
     moveTime?: number;
-
-    /** 最大层数，缺省 1 */
+    /**
+     * 最大层数
+     * 缺省 1
+     */
     stackMax?: number;
-    /** 叠加规则：refresh / stack / ignore，缺省 refresh */
+    /**
+     * 叠加规则
+     * 缺省 refresh
+     */
     stackMode?: 'refresh' | 'stack' | 'ignore';
-
-    /** 飘字与日志配色 */
+    /**
+     * 配色
+     * 飘字与日志配色 #rrggbb
+     */
     color?: string;
-    /** 命中震屏强度 */
-    shake?: number;
-}
-
-/** skill.json 打击点里的一项 buff 引用 */
-export interface HitEffectRow {
-    /** buff.json 的主键 */
-    buff: string;
-    /** 覆盖 buff 的 value（同一 buff 给不同技能用不同倍率） */
-    value?: number;
-    /** 触发概率 0~1，缺省 1 */
-    chance?: number;
-    /** 叠加层数，缺省 1 */
-    stacks?: number;
-}
-
-/** skill.json 里的一个打击点 */
-export interface HitRow {
-    /** 动作进度 0~1（换算成秒 = at × duration） */
-    at: number;
-    /** 打击效果，按数组顺序依次施加 */
-    effects?: HitEffectRow[];
-    /** 这一段命中的震屏强度 */
+    /**
+     * 震屏强度(万分比)
+     * 万分比：6000 = 6。命中震屏
+     */
     shake?: number;
 }
 
 /** skill.json 的一行：一个技能 */
 export interface SkillRow {
+    /**
+     * 角色id
+     * 必须在 character.json 里存在
+     */
     charId: string;
-    /** 1..4，即 skill1..4，决定按钮顺序 */
+    /**
+     * 技能槽位
+     * 1~4，同一角色内不能重复。按钮顺序由本表行顺序决定，不是这个数值
+     */
     slot: number;
-    name: string;
-    /** 按钮上的短名，缺省取 name 前 2 字 */
+    /**
+     * 技能名
+     * 显示在按钮与日志；缺省用「技能N」
+     */
+    name?: string;
+    /**
+     * 按钮短名
+     * 缺省取 name 前 2 字
+     */
     short?: string;
-    /** 绑定的 spine 动画名 */
+    /**
+     * 动画名
+     * 留空则整行被跳过，技能不会出现
+     */
     anim: string;
-    /** 演出时长（秒），决定播放倍速；0/缺省按动画原速 */
+    /**
+     * 演出时长(毫秒)
+     * 毫秒：1500 = 1.5 秒。决定播放倍速；0 / 缺省按动画原速
+     */
     duration?: number;
     /**
-     * 打击点。每个打击点带一组 buff 引用 —— 技能的「做什么」全在 effects 里，
-     * 技能本身只决定「第几帧打出去」。兼容旧的纯数字写法（视为一段纯伤害）。
+     * 能量消耗
+     * 0~100
      */
-    hits?: Array<number | HitRow>;
     energyCost?: number;
+    /**
+     * 冷却时长(毫秒)
+     * 毫秒：2500 = 2.5 秒。从动作播完开始计时（不是按下按钮开始）
+     */
     cooldown?: number;
-    /** 释放时前冲距离 */
+    /**
+     * 前冲距离
+     * 当前运行时不生效，字段保留备用
+     */
     lunge?: number;
-    /** 射程覆盖（720 基准）；0/缺省沿用角色 attackRange */
+    /**
+     * 射程
+     * 720 基准；0 / 缺省沿用角色的 attackRange
+     */
     range?: number;
-    /** 飘字颜色 */
+    /**
+     * 主题色
+     * #rrggbb
+     */
     color?: string;
 }
 
-/** battle.json：扁平键值表 */
-export type BattleSheet = { [key: string]: unknown };
+/** hit.json 的一行：一个打击点 */
+export interface HitRow {
+    /**
+     * 角色id
+     * 外键：character.json 的 id
+     */
+    charId: string;
+    /**
+     * 技能槽位
+     * 外键：skill.json 同角色的 slot
+     */
+    slot: number;
+    /**
+     * 段序号
+     * 1 起，缺省按行序自动编号。同一 charId + slot 下不能重复
+     */
+    hit?: number;
+    /**
+     * 打击时刻(毫秒)
+     * 毫秒：距技能动画开始的时刻，765 = 0.765 秒。上限是该技能的演出时长（skill.duration；填 0 时按 battle.skillTargetTime），超出会被钳到动画末尾
+     */
+    at: number;
+    /**
+     * 震屏强度(万分比)
+     * 万分比：6000 = 6。这一段命中的震屏，0 / 缺省 = 不震
+     */
+    shake?: number;
+    /**
+     * 效果1
+     * 语法 <buffId>[:value][@chance][#stacks]，value 与 chance 用万分比，如 dmg:16000、slow@4000
+     */
+    e1?: string;
+    /**
+     * 效果2
+     * 必须紧接 e1 填，中间不能空
+     */
+    e2?: string;
+    /** 效果3 */
+    e3?: string;
+    /**
+     * 效果4
+     * 一段最多 4 组，e5 及以后不存在
+     */
+    e4?: string;
+}

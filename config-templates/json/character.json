@@ -1,0 +1,147 @@
+{
+  "rows": [
+    {
+      "id": "E200004",
+      "name": "玄女",
+      "maxHp": 1150,
+      "atk": 82,
+      "def": 18,
+      "critRate": 1200,
+      "attackRange": 740,
+      "moveSpeed": 300,
+      "accent": "#7fd4ff"
+    },
+    {
+      "id": "H30027",
+      "name": "剑客",
+      "maxHp": 1000,
+      "atk": 90,
+      "def": 14,
+      "critRate": 1400,
+      "attackRange": 380,
+      "moveSpeed": 380,
+      "accent": "#ffd166"
+    },
+    {
+      "id": "H30032",
+      "name": "术士",
+      "maxHp": 960,
+      "atk": 96,
+      "def": 12,
+      "critRate": 1500,
+      "attackRange": 660,
+      "moveSpeed": 300,
+      "accent": "#c792ea"
+    },
+    {
+      "id": "H30039",
+      "name": "祭司",
+      "maxHp": 1080,
+      "atk": 86,
+      "def": 16,
+      "critRate": 1200,
+      "attackRange": 520,
+      "moveSpeed": 320,
+      "accent": "#7ee787"
+    },
+    {
+      "id": "H30047",
+      "name": "武姬",
+      "maxHp": 1020,
+      "atk": 88,
+      "def": 15,
+      "critRate": 1300,
+      "attackRange": 430,
+      "moveSpeed": 370,
+      "accent": "#ff9f6e"
+    },
+    {
+      "id": "zhaoyun",
+      "name": "赵子龙",
+      "maxHp": 1120,
+      "atk": 94,
+      "def": 15,
+      "critRate": 1500,
+      "attackRange": 660,
+      "moveSpeed": 340,
+      "accent": "#8fb3ff"
+    },
+    {
+      "id": "zhangliao",
+      "name": "张辽",
+      "maxHp": 940,
+      "atk": 104,
+      "def": 11,
+      "critRate": 1700,
+      "attackRange": 720,
+      "moveSpeed": 300,
+      "accent": "#b46bff"
+    },
+    {
+      "id": "zhoutai",
+      "name": "周泰",
+      "maxHp": 1180,
+      "atk": 96,
+      "def": 17,
+      "critRate": 1300,
+      "attackRange": 490,
+      "moveSpeed": 340,
+      "accent": "#ff7a59"
+    },
+    {
+      "id": "xuzhu",
+      "name": "许褚",
+      "maxHp": 1280,
+      "atk": 90,
+      "def": 21,
+      "critRate": 1100,
+      "attackRange": 560,
+      "moveSpeed": 300,
+      "accent": "#b8c6d9"
+    },
+    {
+      "id": "qiangbing",
+      "name": "长矛将",
+      "maxHp": 880,
+      "atk": 82,
+      "def": 10,
+      "critRate": 1000,
+      "attackRange": 620,
+      "moveSpeed": 360,
+      "accent": "#9fb3c8"
+    },
+    {
+      "id": "mulan",
+      "name": "花木兰",
+      "maxHp": 1220,
+      "atk": 92,
+      "def": 19,
+      "critRate": 1200,
+      "attackRange": 530,
+      "moveSpeed": 330,
+      "accent": "#6fe3ff"
+    },
+    {
+      "id": "lvbu",
+      "name": "吕布",
+      "maxHp": 100000,
+      "atk": 108,
+      "def": 16,
+      "critRate": 1800,
+      "attackRange": 480,
+      "moveSpeed": 350,
+      "accent": "#ff4d4d"
+    },
+    {
+      "id": "guanyu",
+      "name": "关羽",
+      "maxHp": 1260,
+      "atk": 100,
+      "def": 18,
+      "critRate": 1400,
+      "attackRange": 600,
+      "moveSpeed": 320,
+      "accent": "#ffb347"
+    }
+  ]
+}

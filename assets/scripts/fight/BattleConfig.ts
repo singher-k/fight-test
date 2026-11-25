@@ -94,6 +94,12 @@ export interface CharacterConfig {
  * 这里的值是**默认值**，运行时会被 resources/config/battle.json 覆盖
  * （只覆盖同名键，写错键名会在控制台告警）。
  * 改完 JSON 不用改这个文件；这里保留默认值是为了配置加载失败时仍能跑。
+ *
+ * ★ 单位：**这里的默认值写小数**（0.5 = 50%，1.45 = 1.45 秒），和全项目的运行时口径一致。
+ *   但配置表里存的是整数，由 GameConfig._parseBattle 按两张白名单还原后才覆盖到这里：
+ *     · BATTLE_WF_KEYS  比例 / 倍数 → 万分比，÷10000（5000 → 0.5）
+ *     · BATTLE_MS_KEYS  时间     → 整数毫秒，÷1000（1450 → 1.45 秒）
+ *   哪些键属于哪一类：见 config-templates/schema.py 里类型标 wf / ms 的键。
  */
 export const BATTLE = {
     // ---- 开局阵容 ----

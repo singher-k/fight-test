@@ -43,6 +43,8 @@ export interface SkillDef {
      * ★ 打击点（已按 at 升序）
      *
      * 每段的 `at` 是动作进度 0~1，运行时换算成秒 = at × duration；
+     * ★ 配置表 hit.json 里填的是**整数毫秒**（距动画开始的时刻），由
+     *   GameConfig 按 at_ms / duration_ms 换成这里的 0~1，业务代码不用管单位。
      * 每段的 `effects` 是该段打出去的所有 buff —— 伤害、治疗、控制、位移都在里面。
      */
     hits: HitPoint[];
@@ -51,7 +53,11 @@ export interface SkillDef {
     energyCost: number;
     /** 冷却秒数 */
     cooldown: number;
-    /** 释放时前冲距离 */
+    /**
+     * 释放时前冲距离
+     * ★ 当前运行时**不生效**（playSkill 里已关闭）：侧视角下前冲-回位会被读成
+     *   「人物左右晃动」。字段保留供以后做可选表演参数，配了也不会动。
+     */
     lunge: number;
     /**
      * 射程覆盖（720×1280 基准像素）

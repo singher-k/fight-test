@@ -1,7 +1,4 @@
 {
-  "_table": "character",
-  "_version": 1,
-  "_comment": "角色表：一行一个角色的战斗数值。id 为主键，被 spine / anim / skill 三张表用 id / charId 引用。attackRange 与 moveSpeed 均为 720×1280 基准像素，运行时乘屏幕缩放；attackRange 按两人中心距判定。accent 为主题色（血条/名字/选中态）。",
   "rows": [
     {
       "id": "E200004",
@@ -9,7 +6,7 @@
       "maxHp": 1150,
       "atk": 82,
       "def": 18,
-      "critRate": 0.12,
+      "critRate": 1200,
       "attackRange": 740,
       "moveSpeed": 300,
       "accent": "#7fd4ff"
@@ -20,7 +17,7 @@
       "maxHp": 1000,
       "atk": 90,
       "def": 14,
-      "critRate": 0.14,
+      "critRate": 1400,
       "attackRange": 380,
       "moveSpeed": 380,
       "accent": "#ffd166"
@@ -31,7 +28,7 @@
       "maxHp": 960,
       "atk": 96,
       "def": 12,
-      "critRate": 0.15,
+      "critRate": 1500,
       "attackRange": 660,
       "moveSpeed": 300,
       "accent": "#c792ea"
@@ -42,7 +39,7 @@
       "maxHp": 1080,
       "atk": 86,
       "def": 16,
-      "critRate": 0.12,
+      "critRate": 1200,
       "attackRange": 520,
       "moveSpeed": 320,
       "accent": "#7ee787"
@@ -53,7 +50,7 @@
       "maxHp": 1020,
       "atk": 88,
       "def": 15,
-      "critRate": 0.13,
+      "critRate": 1300,
       "attackRange": 430,
       "moveSpeed": 370,
       "accent": "#ff9f6e"
@@ -64,7 +61,7 @@
       "maxHp": 1120,
       "atk": 94,
       "def": 15,
-      "critRate": 0.15,
+      "critRate": 1500,
       "attackRange": 660,
       "moveSpeed": 340,
       "accent": "#8fb3ff"
@@ -75,7 +72,7 @@
       "maxHp": 940,
       "atk": 104,
       "def": 11,
-      "critRate": 0.17,
+      "critRate": 1700,
       "attackRange": 720,
       "moveSpeed": 300,
       "accent": "#b46bff"
@@ -86,7 +83,7 @@
       "maxHp": 1180,
       "atk": 96,
       "def": 17,
-      "critRate": 0.13,
+      "critRate": 1300,
       "attackRange": 490,
       "moveSpeed": 340,
       "accent": "#ff7a59"
@@ -97,7 +94,7 @@
       "maxHp": 1280,
       "atk": 90,
       "def": 21,
-      "critRate": 0.11,
+      "critRate": 1100,
       "attackRange": 560,
       "moveSpeed": 300,
       "accent": "#b8c6d9"
@@ -108,7 +105,7 @@
       "maxHp": 880,
       "atk": 82,
       "def": 10,
-      "critRate": 0.1,
+      "critRate": 1000,
       "attackRange": 620,
       "moveSpeed": 360,
       "accent": "#9fb3c8"
@@ -119,7 +116,7 @@
       "maxHp": 1220,
       "atk": 92,
       "def": 19,
-      "critRate": 0.12,
+      "critRate": 1200,
       "attackRange": 530,
       "moveSpeed": 330,
       "accent": "#6fe3ff"
@@ -130,7 +127,7 @@
       "maxHp": 100000,
       "atk": 108,
       "def": 16,
-      "critRate": 0.18,
+      "critRate": 1800,
       "attackRange": 480,
       "moveSpeed": 350,
       "accent": "#ff4d4d"
@@ -141,7 +138,7 @@
       "maxHp": 1260,
       "atk": 100,
       "def": 18,
-      "critRate": 0.14,
+      "critRate": 1400,
       "attackRange": 600,
       "moveSpeed": 320,
       "accent": "#ffb347"

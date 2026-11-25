@@ -22,3 +22,10 @@ node_modules/
 # WebStorm
 #//////////////////////////
 .idea/
+# 配置导出工具生成的旧文件备份（不需要进仓库）
+**/.backup/
+# Excel / WPS 打开 xlsx 时留的锁文件
+**/~$*
+# Python 缓存
+__pycache__/
+*.pyc

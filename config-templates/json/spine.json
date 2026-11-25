@@ -1,0 +1,155 @@
+{
+  "rows": [
+    {
+      "id": "E200004",
+      "bundle": "spine",
+      "path": "E200004/E200004",
+      "scale": 8700,
+      "anchorX": -10,
+      "anchorY": -17,
+      "headY": 445,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "H30027",
+      "bundle": "spine",
+      "path": "H30027/H30027",
+      "scale": 7600,
+      "anchorX": 0,
+      "anchorY": -111,
+      "headY": 444,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "H30032",
+      "bundle": "spine",
+      "path": "H30032/H30032",
+      "scale": 8600,
+      "anchorX": 0,
+      "anchorY": -94,
+      "headY": 394,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "H30039",
+      "bundle": "spine",
+      "path": "H30039/H30039",
+      "scale": 8000,
+      "anchorX": -14,
+      "anchorY": -86,
+      "headY": 419,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "H30047",
+      "bundle": "spine",
+      "path": "H30047/H30047",
+      "scale": 7800,
+      "anchorX": -15,
+      "anchorY": -95,
+      "headY": 444,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "zhaoyun",
+      "bundle": "spine",
+      "path": "zhaoyun/zhaoyun",
+      "scale": 4710,
+      "anchorX": 53,
+      "anchorY": -37,
+      "headY": 855,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "zhangliao",
+      "bundle": "spine",
+      "path": "zhangliao/zhangliao",
+      "scale": 3370,
+      "anchorX": 20,
+      "anchorY": -43,
+      "headY": 1202,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "zhoutai",
+      "bundle": "spine",
+      "path": "zhoutai/zhoutai",
+      "scale": 3660,
+      "anchorX": 71,
+      "anchorY": -88,
+      "headY": 1061,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "xuzhu",
+      "bundle": "spine",
+      "path": "xuzhu/xuzhu",
+      "scale": 3160,
+      "anchorX": 24,
+      "anchorY": -93,
+      "headY": 1235,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "qiangbing",
+      "bundle": "spine",
+      "path": "qiangbing/qiangbing",
+      "scale": 7480,
+      "anchorX": 35,
+      "anchorY": 14,
+      "headY": 547,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "mulan",
+      "bundle": "spine",
+      "path": "mulan/mulan",
+      "scale": 7290,
+      "anchorX": -8,
+      "anchorY": -19,
+      "headY": 557,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "lvbu",
+      "bundle": "spine",
+      "path": "lvbu/lvbu",
+      "scale": 5600,
+      "anchorX": -56,
+      "anchorY": -33,
+      "headY": 716,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "id": "guanyu",
+      "bundle": "spine",
+      "path": "guanyu/guanyu",
+      "scale": 5110,
+      "anchorX": -34,
+      "anchorY": -41,
+      "headY": 781,
+      "flip": true,
+      "offsetX": 0,
+      "offsetY": 0
+    }
+  ]
+}

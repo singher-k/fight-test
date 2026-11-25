@@ -1,7 +1,4 @@
 {
-  "_table": "skill",
-  "_version": 2,
-  "_comment": "技能表（v2）：一行一个技能。charId + slot 唯一（slot 即 skill1..4，决定按钮顺序）；anim 为绑定的 Spine 动画名；duration 为演出时长（决定播放倍速）。hits 是打击点数组：at 为动作进度 0~1（换算成秒 = at × duration），effects 为该段打出去的效果，每项引用 buff.json 的 id，可用 value / chance / stacks 覆盖默认值（value 只写绝对值倍数，例如 dmg 的 1.6 表示 1.6 倍攻击；是伤害还是治疗由 buff 表的 sign 决定）。技能本身不再存伤害倍率与治疗比例——所有效果都是 buff。range 为 0 时沿用角色 attackRange。",
   "rows": [
     {
       "charId": "E200004",
@@ -9,24 +6,9 @@
       "name": "云袖拂",
       "short": "云袖",
       "anim": "action1",
-      "duration": 1.3,
-      "hits": [
-        {
-          "at": 0.5,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.4
-            },
-            {
-              "buff": "slow",
-              "chance": 0.4
-            }
-          ]
-        }
-      ],
+      "duration": 1300,
       "energyCost": 30,
-      "cooldown": 2.5,
+      "cooldown": 2500,
       "lunge": 60,
       "range": 0,
       "color": "#7fd4ff"
@@ -37,23 +19,9 @@
       "name": "疏影横斜",
       "short": "疏影",
       "anim": "action2",
-      "duration": 1.7,
-      "hits": [
-        {
-          "at": 0.55,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.1
-            },
-            {
-              "buff": "armorBreak"
-            }
-          ]
-        }
-      ],
+      "duration": 1700,
       "energyCost": 45,
-      "cooldown": 5,
+      "cooldown": 5000,
       "lunge": 84,
       "range": 0,
       "color": "#7fd4ff"
@@ -64,23 +32,9 @@
       "name": "轻睨回春",
       "short": "回春",
       "anim": "xiao",
-      "duration": 1.4,
-      "hits": [
-        {
-          "at": 0.45,
-          "effects": [
-            {
-              "buff": "heal",
-              "value": 0.28
-            },
-            {
-              "buff": "hot"
-            }
-          ]
-        }
-      ],
+      "duration": 1400,
       "energyCost": 50,
-      "cooldown": 8,
+      "cooldown": 8000,
       "lunge": 0,
       "range": 0,
       "color": "#7ee787"
@@ -91,41 +45,9 @@
       "name": "天倾",
       "short": "天倾",
       "anim": "1",
-      "duration": 2.4,
-      "hits": [
-        {
-          "at": 0.35,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.15
-            }
-          ]
-        },
-        {
-          "at": 0.55,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.15
-            }
-          ]
-        },
-        {
-          "at": 0.75,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.15
-            },
-            {
-              "buff": "burn"
-            }
-          ]
-        }
-      ],
+      "duration": 2400,
       "energyCost": 100,
-      "cooldown": 14,
+      "cooldown": 14000,
       "lunge": 96,
       "range": 0,
       "color": "#ffd166"
@@ -136,24 +58,9 @@
       "name": "疾风点刺",
       "short": "点刺",
       "anim": "action1",
-      "duration": 1.1,
-      "hits": [
-        {
-          "at": 0.45,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.6
-            },
-            {
-              "buff": "bleed",
-              "chance": 0.5
-            }
-          ]
-        }
-      ],
+      "duration": 1100,
       "energyCost": 35,
-      "cooldown": 3,
+      "cooldown": 3000,
       "lunge": 72,
       "range": 0,
       "color": "#ffd166"
@@ -164,23 +71,9 @@
       "name": "裂空斩",
       "short": "裂空",
       "anim": "action2",
-      "duration": 1.6,
-      "hits": [
-        {
-          "at": 0.52,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.6
-            },
-            {
-              "buff": "knockback"
-            }
-          ]
-        }
-      ],
+      "duration": 1600,
       "energyCost": 60,
-      "cooldown": 6,
+      "cooldown": 6000,
       "lunge": 104,
       "range": 0,
       "color": "#ffd166"
@@ -191,23 +84,9 @@
       "name": "蚀骨咒火",
       "short": "咒火",
       "anim": "action1",
-      "duration": 1.2,
-      "hits": [
-        {
-          "at": 0.5,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.7
-            },
-            {
-              "buff": "burn"
-            }
-          ]
-        }
-      ],
+      "duration": 1200,
       "energyCost": 35,
-      "cooldown": 3,
+      "cooldown": 3000,
       "lunge": 40,
       "range": 0,
       "color": "#c792ea"
@@ -218,47 +97,9 @@
       "name": "三连焰",
       "short": "三连",
       "anim": "action3",
-      "duration": 1,
-      "hits": [
-        {
-          "at": 0.35,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 0.72
-            },
-            {
-              "buff": "burn"
-            }
-          ]
-        },
-        {
-          "at": 0.55,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 0.72
-            },
-            {
-              "buff": "burn"
-            }
-          ]
-        },
-        {
-          "at": 0.75,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 0.72
-            },
-            {
-              "buff": "burn"
-            }
-          ]
-        }
-      ],
+      "duration": 1000,
       "energyCost": 50,
-      "cooldown": 5,
+      "cooldown": 5000,
       "lunge": 36,
       "range": 0,
       "color": "#c792ea"
@@ -269,33 +110,9 @@
       "name": "陨星落",
       "short": "陨星",
       "anim": "action2",
-      "duration": 2.5,
-      "hits": [
-        {
-          "at": 0.4,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.9
-            }
-          ]
-        },
-        {
-          "at": 0.62,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.9
-            },
-            {
-              "buff": "stun",
-              "chance": 0.35
-            }
-          ]
-        }
-      ],
+      "duration": 2500,
       "energyCost": 100,
-      "cooldown": 12,
+      "cooldown": 12000,
       "lunge": 30,
       "range": 0,
       "color": "#ffd166"
@@ -306,23 +123,9 @@
       "name": "祈福圣歌",
       "short": "祈福",
       "anim": "action1",
-      "duration": 1.5,
-      "hits": [
-        {
-          "at": 0.5,
-          "effects": [
-            {
-              "buff": "heal",
-              "value": 0.32
-            },
-            {
-              "buff": "hot"
-            }
-          ]
-        }
-      ],
+      "duration": 1500,
       "energyCost": 45,
-      "cooldown": 7,
+      "cooldown": 7000,
       "lunge": 0,
       "range": 0,
       "color": "#7ee787"
@@ -333,24 +136,9 @@
       "name": "净世审判",
       "short": "审判",
       "anim": "action2",
-      "duration": 1.9,
-      "hits": [
-        {
-          "at": 0.55,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.3
-            },
-            {
-              "buff": "stun",
-              "chance": 0.3
-            }
-          ]
-        }
-      ],
+      "duration": 1900,
       "energyCost": 65,
-      "cooldown": 6,
+      "cooldown": 6000,
       "lunge": 48,
       "range": 0,
       "color": "#7ee787"
@@ -361,35 +149,9 @@
       "name": "连环刺",
       "short": "连刺",
       "anim": "action1",
-      "duration": 1.1,
-      "hits": [
-        {
-          "at": 0.4,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 0.95
-            },
-            {
-              "buff": "bleed"
-            }
-          ]
-        },
-        {
-          "at": 0.62,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 0.95
-            },
-            {
-              "buff": "bleed"
-            }
-          ]
-        }
-      ],
+      "duration": 1100,
       "energyCost": 30,
-      "cooldown": 2.5,
+      "cooldown": 2500,
       "lunge": 70,
       "range": 0,
       "color": "#ff9f6e"
@@ -400,23 +162,9 @@
       "name": "回旋刃",
       "short": "回旋",
       "anim": "action3",
-      "duration": 1.2,
-      "hits": [
-        {
-          "at": 0.5,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.9
-            },
-            {
-              "buff": "armorBreak"
-            }
-          ]
-        }
-      ],
+      "duration": 1200,
       "energyCost": 45,
-      "cooldown": 4,
+      "cooldown": 4000,
       "lunge": 78,
       "range": 0,
       "color": "#ff9f6e"
@@ -427,32 +175,9 @@
       "name": "破军式",
       "short": "破军",
       "anim": "action2",
-      "duration": 2,
-      "hits": [
-        {
-          "at": 0.42,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.7
-            }
-          ]
-        },
-        {
-          "at": 0.66,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.7
-            },
-            {
-              "buff": "knockup"
-            }
-          ]
-        }
-      ],
+      "duration": 2000,
       "energyCost": 75,
-      "cooldown": 8,
+      "cooldown": 8000,
       "lunge": 96,
       "range": 0,
       "color": "#ffd166"
@@ -463,23 +188,9 @@
       "name": "龙胆突刺",
       "short": "突刺",
       "anim": "attack_1",
-      "duration": 1.1,
-      "hits": [
-        {
-          "at": 0.45,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.5
-            },
-            {
-              "buff": "knockback"
-            }
-          ]
-        }
-      ],
+      "duration": 1100,
       "energyCost": 30,
-      "cooldown": 3,
+      "cooldown": 3000,
       "lunge": 70,
       "range": 0,
       "color": "#8fb3ff"
@@ -490,23 +201,9 @@
       "name": "破阵回旋",
       "short": "回旋",
       "anim": "attack_2",
-      "duration": 1.5,
-      "hits": [
-        {
-          "at": 0.5,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.2
-            },
-            {
-              "buff": "slow"
-            }
-          ]
-        }
-      ],
+      "duration": 1500,
       "energyCost": 50,
-      "cooldown": 6,
+      "cooldown": 6000,
       "lunge": 90,
       "range": 0,
       "color": "#8fb3ff"
@@ -517,23 +214,9 @@
       "name": "银龙啸天",
       "short": "银龙",
       "anim": "attack_3",
-      "duration": 1.9,
-      "hits": [
-        {
-          "at": 0.55,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 3
-            },
-            {
-              "buff": "knockup"
-            }
-          ]
-        }
-      ],
+      "duration": 1900,
       "energyCost": 75,
-      "cooldown": 10,
+      "cooldown": 10000,
       "lunge": 105,
       "range": 0,
       "color": "#8fb3ff"
@@ -544,45 +227,9 @@
       "name": "天羽破军",
       "short": "破军",
       "anim": "attack_4",
-      "duration": 2.2,
-      "hits": [
-        {
-          "at": 0.32,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.4
-            }
-          ]
-        },
-        {
-          "at": 0.5,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.4
-            },
-            {
-              "buff": "armorBreak"
-            }
-          ]
-        },
-        {
-          "at": 0.7,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.4
-            },
-            {
-              "buff": "stun",
-              "chance": 0.35
-            }
-          ]
-        }
-      ],
+      "duration": 2200,
       "energyCost": 100,
-      "cooldown": 16,
+      "cooldown": 16000,
       "lunge": 120,
       "range": 0,
       "color": "#8fb3ff"
@@ -593,23 +240,9 @@
       "name": "焰影灼",
       "short": "焰灼",
       "anim": "attack_1",
-      "duration": 1.3,
-      "hits": [
-        {
-          "at": 0.5,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.5
-            },
-            {
-              "buff": "burn"
-            }
-          ]
-        }
-      ],
+      "duration": 1300,
       "energyCost": 30,
-      "cooldown": 3,
+      "cooldown": 3000,
       "lunge": 20,
       "range": 0,
       "color": "#b46bff"
@@ -620,24 +253,9 @@
       "name": "影火缠身",
       "short": "影火",
       "anim": "attack_2",
-      "duration": 1.8,
-      "hits": [
-        {
-          "at": 0.52,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.1
-            },
-            {
-              "buff": "root",
-              "chance": 0.45
-            }
-          ]
-        }
-      ],
+      "duration": 1800,
       "energyCost": 50,
-      "cooldown": 6.5,
+      "cooldown": 6500,
       "lunge": 24,
       "range": 760,
       "color": "#b46bff"
@@ -648,24 +266,9 @@
       "name": "幽冥炎爆",
       "short": "炎爆",
       "anim": "attack_3",
-      "duration": 2,
-      "hits": [
-        {
-          "at": 0.56,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.8
-            },
-            {
-              "buff": "burn",
-              "stacks": 2
-            }
-          ]
-        }
-      ],
+      "duration": 2000,
       "energyCost": 75,
-      "cooldown": 10.5,
+      "cooldown": 10500,
       "lunge": 30,
       "range": 780,
       "color": "#b46bff"
@@ -676,59 +279,9 @@
       "name": "焚天狱炎",
       "short": "焚天",
       "anim": "attack_4",
-      "duration": 2.3,
-      "hits": [
-        {
-          "at": 0.3,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.1
-            },
-            {
-              "buff": "burn"
-            }
-          ]
-        },
-        {
-          "at": 0.48,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.1
-            },
-            {
-              "buff": "burn"
-            }
-          ]
-        },
-        {
-          "at": 0.66,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.1
-            },
-            {
-              "buff": "burn"
-            }
-          ]
-        },
-        {
-          "at": 0.84,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.1
-            },
-            {
-              "buff": "burn"
-            }
-          ]
-        }
-      ],
+      "duration": 2300,
       "energyCost": 100,
-      "cooldown": 16,
+      "cooldown": 16000,
       "lunge": 30,
       "range": 800,
       "color": "#b46bff"
@@ -739,23 +292,9 @@
       "name": "烈炎斩",
       "short": "烈炎",
       "anim": "attack_1",
-      "duration": 1.1,
-      "hits": [
-        {
-          "at": 0.46,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.6
-            },
-            {
-              "buff": "bleed"
-            }
-          ]
-        }
-      ],
+      "duration": 1100,
       "energyCost": 32,
-      "cooldown": 3,
+      "cooldown": 3000,
       "lunge": 68,
       "range": 0,
       "color": "#ff7a59"
@@ -766,26 +305,9 @@
       "name": "战魂焚天",
       "short": "焚天",
       "anim": "attack_2",
-      "duration": 1.7,
-      "hits": [
-        {
-          "at": 0.52,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.6
-            },
-            {
-              "buff": "knockback"
-            },
-            {
-              "buff": "defUp"
-            }
-          ]
-        }
-      ],
+      "duration": 1700,
       "energyCost": 65,
-      "cooldown": 8,
+      "cooldown": 8000,
       "lunge": 96,
       "range": 0,
       "color": "#ff7a59"
@@ -796,23 +318,9 @@
       "name": "铁链横扫",
       "short": "横扫",
       "anim": "attack_1",
-      "duration": 1.2,
-      "hits": [
-        {
-          "at": 0.48,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.5
-            },
-            {
-              "buff": "slow"
-            }
-          ]
-        }
-      ],
+      "duration": 1200,
       "energyCost": 34,
-      "cooldown": 3.2,
+      "cooldown": 3200,
       "lunge": 62,
       "range": 0,
       "color": "#b8c6d9"
@@ -823,26 +331,9 @@
       "name": "锁魂缠击",
       "short": "锁魂",
       "anim": "attack_2",
-      "duration": 1.9,
-      "hits": [
-        {
-          "at": 0.54,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.5
-            },
-            {
-              "buff": "root"
-            },
-            {
-              "buff": "knockback"
-            }
-          ]
-        }
-      ],
+      "duration": 1900,
       "energyCost": 62,
-      "cooldown": 7.5,
+      "cooldown": 7500,
       "lunge": 88,
       "range": 0,
       "color": "#b8c6d9"
@@ -853,20 +344,9 @@
       "name": "直刺",
       "short": "直刺",
       "anim": "attack_1",
-      "duration": 1.1,
-      "hits": [
-        {
-          "at": 0.42,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.4
-            }
-          ]
-        }
-      ],
+      "duration": 1100,
       "energyCost": 28,
-      "cooldown": 3,
+      "cooldown": 3000,
       "lunge": 60,
       "range": 0,
       "color": "#9fb3c8"
@@ -877,20 +357,9 @@
       "name": "长枪突进",
       "short": "突进",
       "anim": "attack_2",
-      "duration": 1.4,
-      "hits": [
-        {
-          "at": 0.5,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.2
-            }
-          ]
-        }
-      ],
+      "duration": 1400,
       "energyCost": 55,
-      "cooldown": 7,
+      "cooldown": 7000,
       "lunge": 96,
       "range": 0,
       "color": "#9fb3c8"
@@ -901,23 +370,9 @@
       "name": "冰锋击",
       "short": "冰锋",
       "anim": "attack_1",
-      "duration": 1.2,
-      "hits": [
-        {
-          "at": 0.46,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.5
-            },
-            {
-              "buff": "slow"
-            }
-          ]
-        }
-      ],
+      "duration": 1200,
       "energyCost": 30,
-      "cooldown": 3,
+      "cooldown": 3000,
       "lunge": 66,
       "range": 0,
       "color": "#6fe3ff"
@@ -928,23 +383,9 @@
       "name": "寒霜凝甲",
       "short": "凝甲",
       "anim": "attack_2",
-      "duration": 1.7,
-      "hits": [
-        {
-          "at": 0.45,
-          "effects": [
-            {
-              "buff": "heal",
-              "value": 0.22
-            },
-            {
-              "buff": "defUp"
-            }
-          ]
-        }
-      ],
+      "duration": 1700,
       "energyCost": 45,
-      "cooldown": 9,
+      "cooldown": 9000,
       "lunge": 0,
       "range": 0,
       "color": "#6fe3ff"
@@ -955,23 +396,9 @@
       "name": "凛冬冰环",
       "short": "冰环",
       "anim": "attack_3",
-      "duration": 2.1,
-      "hits": [
-        {
-          "at": 0.55,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.6
-            },
-            {
-              "buff": "root"
-            }
-          ]
-        }
-      ],
+      "duration": 2100,
       "energyCost": 70,
-      "cooldown": 11,
+      "cooldown": 11000,
       "lunge": 80,
       "range": 0,
       "color": "#6fe3ff"
@@ -982,42 +409,9 @@
       "name": "极寒领主",
       "short": "极寒",
       "anim": "attack_4",
-      "duration": 2.2,
-      "hits": [
-        {
-          "at": 0.32,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.3
-            }
-          ]
-        },
-        {
-          "at": 0.5,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.3
-            }
-          ]
-        },
-        {
-          "at": 0.68,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.3
-            },
-            {
-              "buff": "stun",
-              "chance": 0.4
-            }
-          ]
-        }
-      ],
+      "duration": 2200,
       "energyCost": 100,
-      "cooldown": 16,
+      "cooldown": 16000,
       "lunge": 100,
       "range": 0,
       "color": "#6fe3ff"
@@ -1028,24 +422,9 @@
       "name": "方天斩",
       "short": "方天",
       "anim": "attack_1",
-      "duration": 1.3,
-      "hits": [
-        {
-          "at": 0.45,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.6
-            },
-            {
-              "buff": "bleed",
-              "chance": 0.4
-            }
-          ]
-        }
-      ],
+      "duration": 1300,
       "energyCost": 30,
-      "cooldown": 3,
+      "cooldown": 3000,
       "lunge": 72,
       "range": 0,
       "color": "#ff4d4d"
@@ -1056,23 +435,9 @@
       "name": "烈焰缠身",
       "short": "缠身",
       "anim": "attack_2",
-      "duration": 2.83,
-      "hits": [
-        {
-          "at": 0.52,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.4
-            },
-            {
-              "buff": "burn"
-            }
-          ]
-        }
-      ],
+      "duration": 2830,
       "energyCost": 55,
-      "cooldown": 7,
+      "cooldown": 7000,
       "lunge": 100,
       "range": 520,
       "color": "#ff4d4d"
@@ -1083,23 +448,9 @@
       "name": "霸王横扫",
       "short": "霸王",
       "anim": "attack_3",
-      "duration": 4.5,
-      "hits": [
-        {
-          "at": 0.56,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 3
-            },
-            {
-              "buff": "knockup"
-            }
-          ]
-        }
-      ],
+      "duration": 4500,
       "energyCost": 75,
-      "cooldown": 11,
+      "cooldown": 11000,
       "lunge": 110,
       "range": 0,
       "color": "#ff4d4d"
@@ -1110,23 +461,9 @@
       "name": "青龙偃月",
       "short": "偃月",
       "anim": "attack_1",
-      "duration": 1.1,
-      "hits": [
-        {
-          "at": 0.46,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.7
-            },
-            {
-              "buff": "bleed"
-            }
-          ]
-        }
-      ],
+      "duration": 1100,
       "energyCost": 30,
-      "cooldown": 3,
+      "cooldown": 3000,
       "lunge": 70,
       "range": 0,
       "color": "#ffb347"
@@ -1137,23 +474,9 @@
       "name": "拖刀回斩",
       "short": "回斩",
       "anim": "attack_2",
-      "duration": 1.8,
-      "hits": [
-        {
-          "at": 0.52,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.4
-            },
-            {
-              "buff": "knockback"
-            }
-          ]
-        }
-      ],
+      "duration": 1800,
       "energyCost": 52,
-      "cooldown": 7,
+      "cooldown": 7000,
       "lunge": 92,
       "range": 0,
       "color": "#ffb347"
@@ -1164,23 +487,9 @@
       "name": "龙炎破阵",
       "short": "破阵",
       "anim": "attack_3",
-      "duration": 2,
-      "hits": [
-        {
-          "at": 0.55,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 2.9
-            },
-            {
-              "buff": "burn"
-            }
-          ]
-        }
-      ],
+      "duration": 2000,
       "energyCost": 72,
-      "cooldown": 10,
+      "cooldown": 10000,
       "lunge": 105,
       "range": 0,
       "color": "#ffb347"
@@ -1191,44 +500,9 @@
       "name": "武圣降世",
       "short": "武圣",
       "anim": "attack_4",
-      "duration": 2.2,
-      "hits": [
-        {
-          "at": 0.31,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.4
-            },
-            {
-              "buff": "atkUp"
-            }
-          ]
-        },
-        {
-          "at": 0.49,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.4
-            }
-          ]
-        },
-        {
-          "at": 0.67,
-          "effects": [
-            {
-              "buff": "dmg",
-              "value": 1.4
-            },
-            {
-              "buff": "knockup"
-            }
-          ]
-        }
-      ],
+      "duration": 2200,
       "energyCost": 100,
-      "cooldown": 16,
+      "cooldown": 16000,
       "lunge": 115,
       "range": 0,
       "color": "#ffb347"

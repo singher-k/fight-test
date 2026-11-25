@@ -16,6 +16,13 @@
  *   sign = -1 → 伤害，sign = 1 → 治疗，sign 缺省(0) 才退回「正 = 治疗，负 = 伤害」。
  *   这样 value 只写绝对值倍数（如 dmg 的 1.6），配错了也不会把伤害变成回血。
  *
+ * ★ 数值单位：本文件的字段（BuffDef.value / duration / stats …）都是**运行时小数**，
+ *   1.6 就是 1.6 倍、0.35 就是 0.35 秒。配置表里的存法分两种：
+ *     · 比例 / 倍数（value、stats、shake）→ 万分比整数（16000 = 1.6），读入 ÷10000；
+ *     · 时间（duration、tick、moveTime）→ 整数毫秒（350 = 0.35 秒），读入 ÷1000。
+ *   两种换算都由 GameConfig 读入时完成，业务代码拿到的永远是这个单位，
+ *   **不需要自己再除**。
+ *
  * 一个 buff 可以同时命中多条（例如「火焰冲击」= 立即伤害 + 灼烧 + 击退）。
  */
 
@@ -145,7 +152,10 @@ export interface BuffInstance {
 
 /** skill.json 里一个打击点 */
 export interface HitPoint {
-    /** 动作进度 0~1，换算成秒 = at × duration */
+    /**
+     * 动作进度 0~1，换算成秒 = at × duration
+     * （配置表 hit.json 里填整数毫秒，由 GameConfig 换算成这个比例）
+     */
     at: number;
     /** 这一段打出去的所有效果 */
     effects: BuffRef[];

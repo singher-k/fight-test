@@ -1,20 +1,17 @@
 {
-  "_table": "anim",
-  "_version": 1,
-  "_comment": "动画表：一行一个动画引用。kind 取 idle / run / hurt / attack；attack 类按 order 升序组成普攻动作池；anim 为空字符串表示该角色没有这个动作（如受击）。duration 为骨架内原始时长，用于算播放倍速。",
   "rows": [
     {
       "charId": "E200004",
       "kind": "idle",
       "anim": "stand",
-      "duration": 2.667,
+      "duration": 2667,
       "order": 0
     },
     {
       "charId": "E200004",
       "kind": "run",
       "anim": "run",
-      "duration": 0.667,
+      "duration": 667,
       "order": 0
     },
     {
@@ -28,420 +25,420 @@
       "charId": "E200004",
       "kind": "attack",
       "anim": "action1",
-      "duration": 1.5,
+      "duration": 1500,
       "order": 0
     },
     {
       "charId": "E200004",
       "kind": "attack",
       "anim": "action2",
-      "duration": 2.267,
+      "duration": 2267,
       "order": 1
     },
     {
       "charId": "H30027",
       "kind": "idle",
       "anim": "stand2",
-      "duration": 2.667,
+      "duration": 2667,
       "order": 0
     },
     {
       "charId": "H30027",
       "kind": "run",
       "anim": "run",
-      "duration": 0.667,
+      "duration": 667,
       "order": 0
     },
     {
       "charId": "H30027",
       "kind": "hurt",
       "anim": "hurt",
-      "duration": 0.4,
+      "duration": 400,
       "order": 0
     },
     {
       "charId": "H30027",
       "kind": "attack",
       "anim": "action1",
-      "duration": 1.5,
+      "duration": 1500,
       "order": 0
     },
     {
       "charId": "H30027",
       "kind": "attack",
       "anim": "action2",
-      "duration": 1.833,
+      "duration": 1833,
       "order": 1
     },
     {
       "charId": "H30032",
       "kind": "idle",
       "anim": "stand2",
-      "duration": 3,
+      "duration": 3000,
       "order": 0
     },
     {
       "charId": "H30032",
       "kind": "run",
       "anim": "run",
-      "duration": 0.8,
+      "duration": 800,
       "order": 0
     },
     {
       "charId": "H30032",
       "kind": "hurt",
       "anim": "hurt",
-      "duration": 0.333,
+      "duration": 333,
       "order": 0
     },
     {
       "charId": "H30032",
       "kind": "attack",
       "anim": "action3",
-      "duration": 0.833,
+      "duration": 833,
       "order": 0
     },
     {
       "charId": "H30032",
       "kind": "attack",
       "anim": "action1",
-      "duration": 1.5,
+      "duration": 1500,
       "order": 1
     },
     {
       "charId": "H30039",
       "kind": "idle",
       "anim": "stand2",
-      "duration": 3,
+      "duration": 3000,
       "order": 0
     },
     {
       "charId": "H30039",
       "kind": "run",
       "anim": "run",
-      "duration": 1,
+      "duration": 1000,
       "order": 0
     },
     {
       "charId": "H30039",
       "kind": "hurt",
       "anim": "hurt",
-      "duration": 0.333,
+      "duration": 333,
       "order": 0
     },
     {
       "charId": "H30039",
       "kind": "attack",
       "anim": "action1",
-      "duration": 1.733,
+      "duration": 1733,
       "order": 0
     },
     {
       "charId": "H30039",
       "kind": "attack",
       "anim": "action2",
-      "duration": 2.333,
+      "duration": 2333,
       "order": 1
     },
     {
       "charId": "H30047",
       "kind": "idle",
       "anim": "stand2",
-      "duration": 1.333,
+      "duration": 1333,
       "order": 0
     },
     {
       "charId": "H30047",
       "kind": "run",
       "anim": "run",
-      "duration": 0.667,
+      "duration": 667,
       "order": 0
     },
     {
       "charId": "H30047",
       "kind": "hurt",
       "anim": "hurt",
-      "duration": 0.333,
+      "duration": 333,
       "order": 0
     },
     {
       "charId": "H30047",
       "kind": "attack",
       "anim": "action1",
-      "duration": 1.4,
+      "duration": 1400,
       "order": 0
     },
     {
       "charId": "H30047",
       "kind": "attack",
       "anim": "action3",
-      "duration": 1.4,
+      "duration": 1400,
       "order": 1
     },
     {
       "charId": "zhaoyun",
       "kind": "idle",
       "anim": "idle",
-      "duration": 2,
+      "duration": 2000,
       "order": 0
     },
     {
       "charId": "zhaoyun",
       "kind": "run",
       "anim": "walk",
-      "duration": 0.67,
+      "duration": 670,
       "order": 0
     },
     {
       "charId": "zhaoyun",
       "kind": "hurt",
       "anim": "hit",
-      "duration": 0.5,
+      "duration": 500,
       "order": 0
     },
     {
       "charId": "zhaoyun",
       "kind": "attack",
       "anim": "attack_1",
-      "duration": 1.17,
+      "duration": 1170,
       "order": 0
     },
     {
       "charId": "zhaoyun",
       "kind": "attack",
       "anim": "attack_2",
-      "duration": 2.17,
+      "duration": 2170,
       "order": 1
     },
     {
       "charId": "zhangliao",
       "kind": "idle",
       "anim": "idle",
-      "duration": 2,
+      "duration": 2000,
       "order": 0
     },
     {
       "charId": "zhangliao",
       "kind": "run",
       "anim": "walk",
-      "duration": 0.67,
+      "duration": 670,
       "order": 0
     },
     {
       "charId": "zhangliao",
       "kind": "hurt",
       "anim": "hit",
-      "duration": 0.5,
+      "duration": 500,
       "order": 0
     },
     {
       "charId": "zhangliao",
       "kind": "attack",
       "anim": "attack_1",
-      "duration": 2,
+      "duration": 2000,
       "order": 0
     },
     {
       "charId": "zhoutai",
       "kind": "idle",
       "anim": "idle",
-      "duration": 2,
+      "duration": 2000,
       "order": 0
     },
     {
       "charId": "zhoutai",
       "kind": "run",
       "anim": "walk",
-      "duration": 0.67,
+      "duration": 670,
       "order": 0
     },
     {
       "charId": "zhoutai",
       "kind": "hurt",
       "anim": "hit",
-      "duration": 0.5,
+      "duration": 500,
       "order": 0
     },
     {
       "charId": "zhoutai",
       "kind": "attack",
       "anim": "attack_1",
-      "duration": 1.17,
+      "duration": 1170,
       "order": 0
     },
     {
       "charId": "zhoutai",
       "kind": "attack",
       "anim": "attack_2",
-      "duration": 2.07,
+      "duration": 2070,
       "order": 1
     },
     {
       "charId": "xuzhu",
       "kind": "idle",
       "anim": "idle",
-      "duration": 2,
+      "duration": 2000,
       "order": 0
     },
     {
       "charId": "xuzhu",
       "kind": "run",
       "anim": "walk",
-      "duration": 1,
+      "duration": 1000,
       "order": 0
     },
     {
       "charId": "xuzhu",
       "kind": "hurt",
       "anim": "hit",
-      "duration": 0.5,
+      "duration": 500,
       "order": 0
     },
     {
       "charId": "xuzhu",
       "kind": "attack",
       "anim": "attack_1",
-      "duration": 1.33,
+      "duration": 1330,
       "order": 0
     },
     {
       "charId": "xuzhu",
       "kind": "attack",
       "anim": "attack_2",
-      "duration": 2.47,
+      "duration": 2470,
       "order": 1
     },
     {
       "charId": "qiangbing",
       "kind": "idle",
       "anim": "idle",
-      "duration": 2,
+      "duration": 2000,
       "order": 0
     },
     {
       "charId": "qiangbing",
       "kind": "run",
       "anim": "walk",
-      "duration": 0.67,
+      "duration": 670,
       "order": 0
     },
     {
       "charId": "qiangbing",
       "kind": "hurt",
       "anim": "hit",
-      "duration": 0.5,
+      "duration": 500,
       "order": 0
     },
     {
       "charId": "qiangbing",
       "kind": "attack",
       "anim": "attack_1",
-      "duration": 1.33,
+      "duration": 1330,
       "order": 0
     },
     {
       "charId": "qiangbing",
       "kind": "attack",
       "anim": "attack_2",
-      "duration": 1.83,
+      "duration": 1830,
       "order": 1
     },
     {
       "charId": "mulan",
       "kind": "idle",
       "anim": "idle",
-      "duration": 2,
+      "duration": 2000,
       "order": 0
     },
     {
       "charId": "mulan",
       "kind": "run",
       "anim": "walk",
-      "duration": 0.67,
+      "duration": 670,
       "order": 0
     },
     {
       "charId": "mulan",
       "kind": "hurt",
       "anim": "hit",
-      "duration": 0.5,
+      "duration": 500,
       "order": 0
     },
     {
       "charId": "mulan",
       "kind": "attack",
       "anim": "attack_1",
-      "duration": 1.67,
+      "duration": 1670,
       "order": 0
     },
     {
       "charId": "mulan",
       "kind": "attack",
       "anim": "attack_4",
-      "duration": 2.5,
+      "duration": 2500,
       "order": 1
     },
     {
       "charId": "lvbu",
       "kind": "idle",
       "anim": "idle",
-      "duration": 2,
+      "duration": 2000,
       "order": 0
     },
     {
       "charId": "lvbu",
       "kind": "run",
       "anim": "walk",
-      "duration": 0.67,
+      "duration": 670,
       "order": 0
     },
     {
       "charId": "lvbu",
       "kind": "hurt",
       "anim": "hit",
-      "duration": 0.5,
+      "duration": 500,
       "order": 0
     },
     {
       "charId": "lvbu",
       "kind": "attack",
       "anim": "attack_1",
-      "duration": 1.33,
+      "duration": 1330,
       "order": 0
     },
     {
       "charId": "guanyu",
       "kind": "idle",
       "anim": "idle",
-      "duration": 2,
+      "duration": 2000,
       "order": 0
     },
     {
       "charId": "guanyu",
       "kind": "run",
       "anim": "walk",
-      "duration": 0.67,
+      "duration": 670,
       "order": 0
     },
     {
       "charId": "guanyu",
       "kind": "hurt",
       "anim": "hit",
-      "duration": 0.5,
+      "duration": 500,
       "order": 0
     },
     {
       "charId": "guanyu",
       "kind": "attack",
       "anim": "attack_1",
-      "duration": 1.33,
+      "duration": 1330,
       "order": 0
     },
     {
       "charId": "guanyu",
       "kind": "attack",
       "anim": "attack_2",
-      "duration": 2.5,
+      "duration": 2500,
       "order": 1
     }
   ]

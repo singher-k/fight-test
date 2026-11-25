@@ -24,8 +24,10 @@ export enum FighterState {
  *
  * ★ 位置模型
  *   - `x` 是逻辑坐标（战斗世界的横向坐标），移动只改它；
- *   - 每帧由 `_syncPos()` 把 `x + 前冲偏移` 写进节点位置，
- *     因此位移不会被 Tween 与逐帧移动互相覆盖。
+ *   - 每帧由 `_syncPos()` 把 `x + _pushOff * facing`（击退偏移）与 `_airY`
+ *     （击飞高度）写进节点位置，因此位移不会被 Tween 与逐帧移动互相覆盖；
+ *   - 普攻 / 技能都**不做**前冲位移，横向位移只来自 buff 的击退（side view 下
+ *     任何主动前冲都会被读成「人物左右晃动」）。
  */
 export class Fighter {
     public readonly cfg: CharacterConfig;
@@ -468,7 +470,12 @@ export class Fighter {
         this.state = FighterState.Skill;
         const duration = def.duration > 0 ? def.duration : BATTLE.skillTargetTime;
         this._runTimed(def.animation, duration, def.hits.map((h) => h.at), onHit, onEnd);
-        if (def.lunge > 0) this._startPush(def.lunge, 0.4);
+        // 技能不做前冲位移：侧视角下"冲出去再退回来"会被读成「人物左右晃动」。
+        // 实测 lunge=100 时峰值 50px（屏宽 750 的 6.7%），全表 36/39 个技能都配了值，
+        // 自动放技能时几乎每秒荡一次；且 _startPush 会把 _pushOff 直接归零，
+        // 中途重新起手还会从峰值一帧跳回原位。需要恢复时补一行：
+        //   if (def.lunge > 0) this._startPush(def.lunge, 0.4);
+        // 配置（skill.json 的 lunge）保留未删，随时可开。
     }
 
     /** 受击（技能释放中可开启霸体：只闪白吃伤害，不打断动作） */
