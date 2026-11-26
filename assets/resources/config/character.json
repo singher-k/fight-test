@@ -69,7 +69,7 @@
     {
       "id": "zhangliao",
       "name": "张辽",
-      "maxHp": 940,
+      "maxHp": 100000,
       "atk": 104,
       "def": 11,
       "critRate": 1700,

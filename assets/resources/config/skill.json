@@ -9,7 +9,6 @@
       "duration": 1300,
       "energyCost": 30,
       "cooldown": 2500,
-      "lunge": 60,
       "range": 0,
       "color": "#7fd4ff"
     },
@@ -22,7 +21,6 @@
       "duration": 1700,
       "energyCost": 45,
       "cooldown": 5000,
-      "lunge": 84,
       "range": 0,
       "color": "#7fd4ff"
     },
@@ -35,7 +33,6 @@
       "duration": 1400,
       "energyCost": 50,
       "cooldown": 8000,
-      "lunge": 0,
       "range": 0,
       "color": "#7ee787"
     },
@@ -48,7 +45,6 @@
       "duration": 2400,
       "energyCost": 100,
       "cooldown": 14000,
-      "lunge": 96,
       "range": 0,
       "color": "#ffd166"
     },
@@ -61,7 +57,6 @@
       "duration": 1100,
       "energyCost": 35,
       "cooldown": 3000,
-      "lunge": 72,
       "range": 0,
       "color": "#ffd166"
     },
@@ -74,7 +69,6 @@
       "duration": 1600,
       "energyCost": 60,
       "cooldown": 6000,
-      "lunge": 104,
       "range": 0,
       "color": "#ffd166"
     },
@@ -87,7 +81,6 @@
       "duration": 1200,
       "energyCost": 35,
       "cooldown": 3000,
-      "lunge": 40,
       "range": 0,
       "color": "#c792ea"
     },
@@ -100,7 +93,6 @@
       "duration": 1000,
       "energyCost": 50,
       "cooldown": 5000,
-      "lunge": 36,
       "range": 0,
       "color": "#c792ea"
     },
@@ -113,7 +105,6 @@
       "duration": 2500,
       "energyCost": 100,
       "cooldown": 12000,
-      "lunge": 30,
       "range": 0,
       "color": "#ffd166"
     },
@@ -126,7 +117,6 @@
       "duration": 1500,
       "energyCost": 45,
       "cooldown": 7000,
-      "lunge": 0,
       "range": 0,
       "color": "#7ee787"
     },
@@ -139,7 +129,6 @@
       "duration": 1900,
       "energyCost": 65,
       "cooldown": 6000,
-      "lunge": 48,
       "range": 0,
       "color": "#7ee787"
     },
@@ -152,7 +141,6 @@
       "duration": 1100,
       "energyCost": 30,
       "cooldown": 2500,
-      "lunge": 70,
       "range": 0,
       "color": "#ff9f6e"
     },
@@ -165,7 +153,6 @@
       "duration": 1200,
       "energyCost": 45,
       "cooldown": 4000,
-      "lunge": 78,
       "range": 0,
       "color": "#ff9f6e"
     },
@@ -178,7 +165,6 @@
       "duration": 2000,
       "energyCost": 75,
       "cooldown": 8000,
-      "lunge": 96,
       "range": 0,
       "color": "#ffd166"
     },
@@ -191,7 +177,6 @@
       "duration": 1100,
       "energyCost": 30,
       "cooldown": 3000,
-      "lunge": 70,
       "range": 0,
       "color": "#8fb3ff"
     },
@@ -204,7 +189,6 @@
       "duration": 1500,
       "energyCost": 50,
       "cooldown": 6000,
-      "lunge": 90,
       "range": 0,
       "color": "#8fb3ff"
     },
@@ -217,7 +201,6 @@
       "duration": 1900,
       "energyCost": 75,
       "cooldown": 10000,
-      "lunge": 105,
       "range": 0,
       "color": "#8fb3ff"
     },
@@ -230,7 +213,6 @@
       "duration": 2200,
       "energyCost": 100,
       "cooldown": 16000,
-      "lunge": 120,
       "range": 0,
       "color": "#8fb3ff"
     },
@@ -240,10 +222,9 @@
       "name": "焰影灼",
       "short": "焰灼",
       "anim": "attack_1",
-      "duration": 1300,
+      "duration": 1500,
       "energyCost": 30,
       "cooldown": 3000,
-      "lunge": 20,
       "range": 0,
       "color": "#b46bff"
     },
@@ -253,10 +234,9 @@
       "name": "影火缠身",
       "short": "影火",
       "anim": "attack_2",
-      "duration": 1800,
+      "duration": 3400,
       "energyCost": 50,
       "cooldown": 6500,
-      "lunge": 24,
       "range": 760,
       "color": "#b46bff"
     },
@@ -266,24 +246,10 @@
       "name": "幽冥炎爆",
       "short": "炎爆",
       "anim": "attack_3",
-      "duration": 2000,
+      "duration": 3600,
       "energyCost": 75,
       "cooldown": 10500,
-      "lunge": 30,
       "range": 780,
-      "color": "#b46bff"
-    },
-    {
-      "charId": "zhangliao",
-      "slot": 4,
-      "name": "焚天狱炎",
-      "short": "焚天",
-      "anim": "attack_4",
-      "duration": 2300,
-      "energyCost": 100,
-      "cooldown": 16000,
-      "lunge": 30,
-      "range": 800,
       "color": "#b46bff"
     },
     {
@@ -295,7 +261,6 @@
       "duration": 1100,
       "energyCost": 32,
       "cooldown": 3000,
-      "lunge": 68,
       "range": 0,
       "color": "#ff7a59"
     },
@@ -308,7 +273,6 @@
       "duration": 1700,
       "energyCost": 65,
       "cooldown": 8000,
-      "lunge": 96,
       "range": 0,
       "color": "#ff7a59"
     },
@@ -321,7 +285,6 @@
       "duration": 1200,
       "energyCost": 34,
       "cooldown": 3200,
-      "lunge": 62,
       "range": 0,
       "color": "#b8c6d9"
     },
@@ -334,7 +297,6 @@
       "duration": 1900,
       "energyCost": 62,
       "cooldown": 7500,
-      "lunge": 88,
       "range": 0,
       "color": "#b8c6d9"
     },
@@ -347,7 +309,6 @@
       "duration": 1100,
       "energyCost": 28,
       "cooldown": 3000,
-      "lunge": 60,
       "range": 0,
       "color": "#9fb3c8"
     },
@@ -360,7 +321,6 @@
       "duration": 1400,
       "energyCost": 55,
       "cooldown": 7000,
-      "lunge": 96,
       "range": 0,
       "color": "#9fb3c8"
     },
@@ -373,7 +333,6 @@
       "duration": 1200,
       "energyCost": 30,
       "cooldown": 3000,
-      "lunge": 66,
       "range": 0,
       "color": "#6fe3ff"
     },
@@ -386,7 +345,6 @@
       "duration": 1700,
       "energyCost": 45,
       "cooldown": 9000,
-      "lunge": 0,
       "range": 0,
       "color": "#6fe3ff"
     },
@@ -399,7 +357,6 @@
       "duration": 2100,
       "energyCost": 70,
       "cooldown": 11000,
-      "lunge": 80,
       "range": 0,
       "color": "#6fe3ff"
     },
@@ -412,7 +369,6 @@
       "duration": 2200,
       "energyCost": 100,
       "cooldown": 16000,
-      "lunge": 100,
       "range": 0,
       "color": "#6fe3ff"
     },
@@ -425,7 +381,6 @@
       "duration": 1300,
       "energyCost": 30,
       "cooldown": 3000,
-      "lunge": 72,
       "range": 0,
       "color": "#ff4d4d"
     },
@@ -438,7 +393,6 @@
       "duration": 2830,
       "energyCost": 55,
       "cooldown": 7000,
-      "lunge": 100,
       "range": 520,
       "color": "#ff4d4d"
     },
@@ -451,7 +405,6 @@
       "duration": 4500,
       "energyCost": 75,
       "cooldown": 11000,
-      "lunge": 110,
       "range": 0,
       "color": "#ff4d4d"
     },
@@ -464,7 +417,6 @@
       "duration": 1100,
       "energyCost": 30,
       "cooldown": 3000,
-      "lunge": 70,
       "range": 0,
       "color": "#ffb347"
     },
@@ -477,7 +429,6 @@
       "duration": 1800,
       "energyCost": 52,
       "cooldown": 7000,
-      "lunge": 92,
       "range": 0,
       "color": "#ffb347"
     },
@@ -490,7 +441,6 @@
       "duration": 2000,
       "energyCost": 72,
       "cooldown": 10000,
-      "lunge": 105,
       "range": 0,
       "color": "#ffb347"
     },
@@ -503,7 +453,6 @@
       "duration": 2200,
       "energyCost": 100,
       "cooldown": 16000,
-      "lunge": 115,
       "range": 0,
       "color": "#ffb347"
     }

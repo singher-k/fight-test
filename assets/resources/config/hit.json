@@ -5,176 +5,84 @@
       "slot": 1,
       "hit": 1,
       "at": 650,
-      "e1": "dmg:14000",
-      "e2": "slow@4000"
+      "e1": "dmg:14000"
     },
     {
       "charId": "E200004",
       "slot": 2,
       "hit": 1,
       "at": 550,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
+      "e1": "dmg:2000"
     },
     {
       "charId": "E200004",
       "slot": 2,
       "hit": 2,
       "at": 550,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
+      "e1": "dmg:2000"
     },
     {
       "charId": "E200004",
       "slot": 2,
       "hit": 3,
       "at": 1050,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
+      "e1": "dmg:2000"
     },
     {
       "charId": "E200004",
       "slot": 2,
       "hit": 4,
       "at": 1550,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
+      "e1": "dmg:2000"
     },
     {
       "charId": "E200004",
       "slot": 2,
       "hit": 5,
       "at": 1650,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
-    },
-    {
-      "charId": "E200004",
-      "slot": 2,
-      "hit": 6,
-      "at": 1750,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
-    },
-    {
-      "charId": "E200004",
-      "slot": 2,
-      "hit": 7,
-      "at": 1820,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
-    },
-    {
-      "charId": "E200004",
-      "slot": 2,
-      "hit": 8,
-      "at": 1880,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
-    },
-    {
-      "charId": "E200004",
-      "slot": 2,
-      "hit": 9,
-      "at": 1960,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
-    },
-    {
-      "charId": "E200004",
-      "slot": 2,
-      "hit": 10,
-      "at": 2060,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
-    },
-    {
-      "charId": "E200004",
-      "slot": 2,
-      "hit": 11,
-      "at": 2150,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
-    },
-    {
-      "charId": "E200004",
-      "slot": 2,
-      "hit": 12,
-      "at": 2200,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
-    },
-    {
-      "charId": "E200004",
-      "slot": 2,
-      "hit": 13,
-      "at": 2300,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
-    },
-    {
-      "charId": "E200004",
-      "slot": 2,
-      "hit": 14,
-      "at": 2330,
-      "e1": "dmg:2000",
-      "e2": "armorBreak"
-    },
-    {
-      "charId": "E200004",
-      "slot": 3,
-      "hit": 1,
-      "at": 630,
-      "e1": "heal:2800",
-      "e2": "hot"
+      "e1": "dmg:2000"
     },
     {
       "charId": "H30027",
       "slot": 1,
       "hit": 1,
       "at": 495,
-      "e1": "dmg:16000",
-      "e2": "bleed@5000"
+      "e1": "dmg:16000"
     },
     {
       "charId": "H30027",
       "slot": 2,
       "hit": 1,
       "at": 832,
-      "e1": "dmg:26000",
-      "e2": "knockback"
+      "e1": "dmg:26000"
     },
     {
       "charId": "H30032",
       "slot": 1,
       "hit": 1,
       "at": 600,
-      "e1": "dmg:17000",
-      "e2": "burn"
+      "e1": "dmg:17000"
     },
     {
       "charId": "H30032",
       "slot": 2,
       "hit": 1,
       "at": 350,
-      "e1": "dmg:7200",
-      "e2": "burn"
+      "e1": "dmg:7200"
     },
     {
       "charId": "H30032",
       "slot": 2,
       "hit": 2,
       "at": 550,
-      "e1": "dmg:7200",
-      "e2": "burn"
+      "e1": "dmg:7200"
     },
     {
       "charId": "H30032",
       "slot": 2,
       "hit": 3,
       "at": 750,
-      "e1": "dmg:7200",
-      "e2": "burn"
+      "e1": "dmg:7200"
     },
     {
       "charId": "H30032",
@@ -188,48 +96,42 @@
       "slot": 3,
       "hit": 2,
       "at": 1550,
-      "e1": "dmg:19000",
-      "e2": "stun@3500"
+      "e1": "dmg:19000"
     },
     {
       "charId": "H30039",
       "slot": 1,
       "hit": 1,
       "at": 750,
-      "e1": "heal:3200",
-      "e2": "hot"
+      "e1": "heal:3200"
     },
     {
       "charId": "H30039",
       "slot": 2,
       "hit": 1,
       "at": 1045,
-      "e1": "dmg:23000",
-      "e2": "stun@3000"
+      "e1": "dmg:23000"
     },
     {
       "charId": "H30047",
       "slot": 1,
       "hit": 1,
       "at": 440,
-      "e1": "dmg:9500",
-      "e2": "bleed"
+      "e1": "dmg:9500"
     },
     {
       "charId": "H30047",
       "slot": 1,
       "hit": 2,
       "at": 682,
-      "e1": "dmg:9500",
-      "e2": "bleed"
+      "e1": "dmg:9500"
     },
     {
       "charId": "H30047",
       "slot": 2,
       "hit": 1,
       "at": 600,
-      "e1": "dmg:19000",
-      "e2": "armorBreak"
+      "e1": "dmg:19000"
     },
     {
       "charId": "H30047",
@@ -243,32 +145,28 @@
       "slot": 3,
       "hit": 2,
       "at": 1320,
-      "e1": "dmg:17000",
-      "e2": "knockup"
+      "e1": "dmg:17000"
     },
     {
       "charId": "zhaoyun",
       "slot": 1,
       "hit": 1,
       "at": 495,
-      "e1": "dmg:15000",
-      "e2": "knockback"
+      "e1": "dmg:15000"
     },
     {
       "charId": "zhaoyun",
       "slot": 2,
       "hit": 1,
       "at": 750,
-      "e1": "dmg:22000",
-      "e2": "slow"
+      "e1": "dmg:22000"
     },
     {
       "charId": "zhaoyun",
       "slot": 3,
       "hit": 1,
       "at": 1045,
-      "e1": "dmg:30000",
-      "e2": "knockup"
+      "e1": "dmg:30000"
     },
     {
       "charId": "zhaoyun",
@@ -282,106 +180,105 @@
       "slot": 4,
       "hit": 2,
       "at": 1100,
-      "e1": "dmg:14000",
-      "e2": "armorBreak"
+      "e1": "dmg:14000"
     },
     {
       "charId": "zhaoyun",
       "slot": 4,
       "hit": 3,
       "at": 1540,
-      "e1": "dmg:14000",
-      "e2": "stun@3500"
+      "e1": "dmg:14000"
     },
     {
       "charId": "zhangliao",
       "slot": 1,
       "hit": 1,
-      "at": 650,
-      "e1": "dmg:15000",
-      "e2": "burn"
+      "at": 1066,
+      "e1": "dmg:15000"
     },
     {
       "charId": "zhangliao",
       "slot": 2,
       "hit": 1,
-      "at": 936,
-      "e1": "dmg:21000",
-      "e2": "root@4500"
+      "at": 900,
+      "e1": "dmg:5100"
+    },
+    {
+      "charId": "zhangliao",
+      "slot": 2,
+      "hit": 2,
+      "at": 1685,
+      "e1": "dmg:5100"
+    },
+    {
+      "charId": "zhangliao",
+      "slot": 2,
+      "hit": 3,
+      "at": 2000,
+      "e1": "dmg:5100"
+    },
+    {
+      "charId": "zhangliao",
+      "slot": 2,
+      "hit": 4,
+      "at": 2366,
+      "e1": "dmg:5100"
+    },
+    {
+      "charId": "zhangliao",
+      "slot": 2,
+      "hit": 6,
+      "at": 900,
+      "e1": "dmg:5100"
     },
     {
       "charId": "zhangliao",
       "slot": 3,
       "hit": 1,
       "at": 1120,
-      "e1": "dmg:28000",
-      "e2": "burn#2"
-    },
-    {
-      "charId": "zhangliao",
-      "slot": 4,
-      "hit": 1,
-      "at": 690,
-      "e1": "dmg:11000",
-      "e2": "burn"
-    },
-    {
-      "charId": "zhangliao",
-      "slot": 4,
-      "hit": 2,
-      "at": 1104,
-      "e1": "dmg:11000",
-      "e2": "burn"
-    },
-    {
-      "charId": "zhangliao",
-      "slot": 4,
-      "hit": 3,
-      "at": 1518,
-      "e1": "dmg:11000",
-      "e2": "burn"
-    },
-    {
-      "charId": "zhangliao",
-      "slot": 4,
-      "hit": 4,
-      "at": 1932,
-      "e1": "dmg:11000",
-      "e2": "burn"
+      "e1": "dmg:28000"
     },
     {
       "charId": "zhoutai",
       "slot": 1,
       "hit": 1,
       "at": 506,
-      "e1": "dmg:16000",
-      "e2": "bleed"
+      "e1": "dmg:16000"
     },
     {
       "charId": "zhoutai",
       "slot": 2,
       "hit": 1,
       "at": 884,
-      "e1": "dmg:26000",
-      "e2": "knockback",
-      "e3": "defUp"
+      "e1": "dmg:26000"
     },
     {
       "charId": "xuzhu",
       "slot": 1,
       "hit": 1,
-      "at": 576,
-      "e1": "dmg:15000",
-      "e2": "slow"
+      "at": 700,
+      "e1": "dmg:15000"
     },
     {
       "charId": "xuzhu",
       "slot": 2,
       "hit": 1,
-      "at": 1026,
-      "e1": "dmg:25000",
-      "e2": "root",
-      "e3": "knockback"
+      "at": 1600,
+      "e1": "dmg:2500"
+    },
+    {
+      "charId": "xuzhu",
+      "slot": 2,
+      "hit": 2,
+      "at": 1700,
+      "e1": "dmg:2500"
+    },
+    {
+      "charId": "xuzhu",
+      "slot": 2,
+      "hit": 3,
+      "at": 1833,
+      "e1": "dmg:2500"
     },
     {
       "charId": "qiangbing",
@@ -402,24 +299,21 @@
       "slot": 1,
       "hit": 1,
       "at": 552,
-      "e1": "dmg:15000",
-      "e2": "slow"
+      "e1": "dmg:15000"
     },
     {
       "charId": "mulan",
       "slot": 2,
       "hit": 1,
       "at": 765,
-      "e1": "heal:2200",
-      "e2": "defUp"
+      "e1": "heal:2200"
     },
     {
       "charId": "mulan",
       "slot": 3,
       "hit": 1,
       "at": 1155,
-      "e1": "dmg:26000",
-      "e2": "root"
+      "e1": "dmg:26000"
     },
     {
       "charId": "mulan",
@@ -440,147 +334,140 @@
       "slot": 4,
       "hit": 3,
       "at": 1496,
-      "e1": "dmg:13000",
-      "e2": "stun@4000"
+      "e1": "dmg:13000"
     },
     {
       "charId": "lvbu",
       "slot": 1,
       "hit": 1,
       "at": 728,
-      "e1": "dmg:16000",
-      "e2": "bleed@4000"
+      "e1": "dmg:16000"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 1,
       "at": 550,
-      "e1": "dmg:2000"
+      "e1": "dmg:6000"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 2,
       "at": 1050,
-      "e1": "dmg:2000"
+      "e1": "dmg:2500"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 3,
       "at": 1550,
-      "e1": "dmg:2000"
+      "e1": "dmg:2500"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 4,
       "at": 1650,
-      "e1": "dmg:2000"
+      "e1": "dmg:2500"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 5,
       "at": 1750,
-      "e1": "dmg:2000"
+      "e1": "dmg:2500"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 6,
       "at": 1820,
-      "e1": "dmg:2000"
+      "e1": "dmg:2500"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 7,
       "at": 1880,
-      "e1": "dmg:2000"
+      "e1": "dmg:2500"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 8,
       "at": 1960,
-      "e1": "dmg:2000"
+      "e1": "dmg:2500"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 9,
       "at": 2060,
-      "e1": "dmg:2000"
+      "e1": "dmg:2500"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 10,
       "at": 2150,
-      "e1": "dmg:2000"
+      "e1": "dmg:2500"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 11,
       "at": 2200,
-      "e1": "dmg:2000"
+      "e1": "dmg:2500"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 12,
       "at": 2300,
-      "e1": "dmg:2000"
+      "e1": "dmg:2500"
     },
     {
       "charId": "lvbu",
       "slot": 2,
       "hit": 13,
       "at": 2330,
-      "e1": "dmg:2000"
+      "e1": "dmg:2500"
     },
     {
       "charId": "lvbu",
       "slot": 3,
       "hit": 1,
       "at": 2520,
-      "e1": "dmg:30000",
-      "e2": "knockup"
+      "e1": "dmg:30000"
     },
     {
       "charId": "guanyu",
       "slot": 1,
       "hit": 1,
       "at": 506,
-      "e1": "dmg:17000",
-      "e2": "bleed"
+      "e1": "dmg:17000"
     },
     {
       "charId": "guanyu",
       "slot": 2,
       "hit": 1,
       "at": 936,
-      "e1": "dmg:24000",
-      "e2": "knockback"
+      "e1": "dmg:24000"
     },
     {
       "charId": "guanyu",
       "slot": 3,
       "hit": 1,
       "at": 1100,
-      "e1": "dmg:29000",
-      "e2": "burn"
+      "e1": "dmg:29000"
     },
     {
       "charId": "guanyu",
       "slot": 4,
       "hit": 1,
       "at": 682,
-      "e1": "dmg:14000",
-      "e2": "atkUp"
+      "e1": "dmg:14000"
     },
     {
       "charId": "guanyu",
@@ -594,8 +481,7 @@
       "slot": 4,
       "hit": 3,
       "at": 1474,
-      "e1": "dmg:14000",
-      "e2": "knockup"
+      "e1": "dmg:14000"
     }
   ]
 }
